@@ -5,6 +5,42 @@ const games = [
     status: 'in development',
     image: 'offroaded-preview.png',
     link: ''
+  },  {
+    title: 'Offroaded',
+    releaseDate: 'Coming soon',
+    status: 'in development',
+    image: 'offroaded-preview.png',
+    link: ''
+  },  {
+    title: 'Offroaded',
+    releaseDate: 'Coming soon',
+    status: 'in development',
+    image: 'offroaded-preview.png',
+    link: ''
+  },  {
+    title: 'Offroaded',
+    releaseDate: 'Coming soon',
+    status: 'in development',
+    image: 'offroaded-preview.png',
+    link: ''
+  },  {
+    title: 'Offroaded',
+    releaseDate: 'Coming soon',
+    status: 'in development',
+    image: 'offroaded-preview.png',
+    link: ''
+  },  {
+    title: 'Offroaded',
+    releaseDate: 'Coming soon',
+    status: 'in development',
+    image: 'offroaded-preview.png',
+    link: ''
+  },  {
+    title: 'Offroaded',
+    releaseDate: 'Coming soon',
+    status: 'in development',
+    image: 'offroaded-preview.png',
+    link: ''
   }
 ];
 
