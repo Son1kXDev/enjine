@@ -3,14 +3,14 @@ const games = [
     title: 'Offroaded',
     releaseDate: 'Coming soon',
     status: 'in development',
-    image: 'offroaded-preview.png',
+    image: 'images/preview/offroaded-preview.png',
     link: ''
   },  
   {
     title: '5opka Game',
     releaseDate: 'Coming soon',
     status: 'in development',
-    image: '5opka-preview.jpg',
+    image: 'images/preview/5opka-preview.jpg',
     link: ''
   }
 ];
