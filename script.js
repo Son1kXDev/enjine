@@ -1,7 +1,7 @@
 const games = [
   {
     title: 'Offroaded',
-    releaseDate: '2024-01-01',
+    releaseDate: 'Coming soon',
     status: 'in development',
     image: 'offroaded-preview.png',
     link: ''
