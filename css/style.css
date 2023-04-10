@@ -152,6 +152,13 @@ h1, h2 {
   margin: 10px 0 5px;
 }
 
+#games-list .version {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: none;
+  margin: 5px 0 5px;
+}
+
 #games-list .status {
   font-size: 14px;
   text-transform: uppercase;
@@ -170,7 +177,7 @@ h1, h2 {
   font-size: 16px;
   border-radius: 10px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #games-list .download-btn:hover {

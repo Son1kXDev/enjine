@@ -3,6 +3,7 @@ const games = [
     title: 'Offroaded',
     releaseDate: 'Coming soon',
     status: 'in development',
+    version: '',
     image: 'images/preview/offroaded-preview.png',
     link: ''
   },  
@@ -10,6 +11,7 @@ const games = [
     title: '5opka Game',
     releaseDate: 'Coming soon',
     status: 'in development',
+    version:'',
     image: 'images/preview/5opka-preview.jpg',
     link: ''
   }
@@ -40,21 +42,28 @@ function generateGamesList() {
     statusEl.innerText = game.status;
     titleContainer.appendChild(statusEl);
 
-	const releaseDateEl = document.createElement('p');
-	releaseDateEl.classList.add('release-date');
-	if (new Date(game.releaseDate) > new Date()) {
-		releaseDateEl.innerText = `Planned release date: ${game.releaseDate}`;
-	} else {
-		releaseDateEl.innerText = `Release date: ${game.releaseDate}`;
-	}
-	li.appendChild(releaseDateEl);
+	  const releaseDateEl = document.createElement('p');
+	  releaseDateEl.classList.add('release-date');
+	  if (new Date(game.releaseDate) > new Date()) {
+		  releaseDateEl.innerText = `Planned release date: ${game.releaseDate}`;
+	  } else {
+		  releaseDateEl.innerText = `Release date: ${game.releaseDate}`;
+	  }
+	  li.appendChild(releaseDateEl);
 
     const downloadLink = document.createElement('a');
-	downloadLink.href = game.link;
-	downloadLink.innerText = game.link!=='' ? 'Download' : 'Coming soon' ;
+	  downloadLink.href = game.link;
+	  downloadLink.innerText = game.link!=='' ? 'Download' : 'Coming soon' ;
     downloadLink.classList.add('download-btn');
     li.appendChild(downloadLink);
 	  
+    if(game.version) {
+      const versionEl = document.createElement('v');
+      versionEl.classList.add('version');
+      versionEl.innerText = `${game.version}`;
+      li.appendChild(versionEl);
+      }
+
     gamesList.appendChild(li);
   });
 }
