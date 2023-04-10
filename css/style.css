@@ -15,6 +15,8 @@ body {
   font-family: sans-serif;
   background: rgb(33,32,40);
   background: linear-gradient(90deg, rgba(33,32,40,1) 0%, rgba(48,47,62,1) 51%, rgba(40,42,71,1) 100%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   color: var(--text-color);
 }
 
@@ -22,11 +24,25 @@ body {
 nav {
   background: rgb(33,32,40);
   background: linear-gradient(90deg, rgba(33,32,40,1) 0%, rgba(48,47,62,1) 51%, rgba(40,42,71,1) 100%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   color: var(--text-color);
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 nav img {
@@ -171,6 +187,7 @@ h1, h2 {
 
 #games-list .download-btn {
   background-color: #e53935;
+  text-decoration: none;
   border: none;
   color: #fff;
   padding: 10px 20px;
@@ -199,6 +216,28 @@ h1, h2 {
 #social-links li {
   display: inline-block;
   margin-right: 10px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeInRight 0.5s ease-out forwards;
+}
+
+#social-links li:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+#social-links li:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 #social-links li:last-child {
@@ -223,6 +262,24 @@ h1, h2 {
 }
 
 /* Contact form */
+form {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 form label {
   display: block;
   margin-bottom: 0.5rem;

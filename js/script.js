@@ -1,7 +1,8 @@
 const games = [
   {
     title: 'Offroaded',
-    releaseDate: 'Coming soon',
+    engine: '<i class="fa-brands fa-unity"></i>',
+    releaseDate: '<i class="fa-solid fa-infinity"></i>',
     status: 'in development',
     version: '',
     image: 'images/preview/offroaded-preview.png',
@@ -9,7 +10,8 @@ const games = [
   },  
   {
     title: '5opka Game',
-    releaseDate: 'Coming soon',
+    engine: '<i class="fa-brands fa-unity"></i>',
+    releaseDate: '<i class="fa-solid fa-infinity"></i>',
     status: 'in development',
     version:'',
     image: 'images/preview/5opka-preview.jpg',
@@ -34,26 +36,26 @@ function generateGamesList() {
     li.appendChild(titleContainer);
 
     const titleEl = document.createElement('h3');
-    titleEl.innerText = game.title;
+    titleEl.innerHTML = game.engine + ' ' + game.title;
     titleContainer.appendChild(titleEl);
 
     const statusEl = document.createElement('span');
     statusEl.classList.add('status');
-    statusEl.innerText = game.status;
+    statusEl.innerHTML = game.status;
     titleContainer.appendChild(statusEl);
 
 	  const releaseDateEl = document.createElement('p');
 	  releaseDateEl.classList.add('release-date');
 	  if (new Date(game.releaseDate) > new Date()) {
-		  releaseDateEl.innerText = `Planned release date: ${game.releaseDate}`;
+		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Planned release date: ${game.releaseDate}`;
 	  } else {
-		  releaseDateEl.innerText = `Release date: ${game.releaseDate}`;
+		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Release date: ${game.releaseDate}`;
 	  }
 	  li.appendChild(releaseDateEl);
 
     const downloadLink = document.createElement('a');
 	  downloadLink.href = game.link;
-	  downloadLink.innerText = game.link!=='' ? 'Download' : 'Coming soon' ;
+	  downloadLink.innerHTML = game.link!=='' ? '<i class="fa-solid fa-download"></i> Download' : '<i class="fa-solid fa-clock"></i> Coming soon' ;
     downloadLink.classList.add('download-btn');
     li.appendChild(downloadLink);
 	  
