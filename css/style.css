@@ -13,13 +13,15 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: var(--primary-color);
+  background: rgb(33,32,40);
+  background: linear-gradient(90deg, rgba(33,32,40,1) 0%, rgba(48,47,62,1) 51%, rgba(40,42,71,1) 100%);
   color: var(--text-color);
 }
 
 /* Navigation */
 nav {
-  background-color: var(--primary-color);
+  background: rgb(33,32,40);
+  background: linear-gradient(90deg, rgba(33,32,40,1) 0%, rgba(48,47,62,1) 51%, rgba(40,42,71,1) 100%);
   color: var(--text-color);
   padding: 1rem;
   display: flex;
