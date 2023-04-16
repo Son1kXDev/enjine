@@ -12,16 +12,12 @@
 </head>
 <body>
 <nav>
-  <a href="home.html"><img src="images/EnjineLogoTransparent.png" alt="Enjine"></a>
+  <a href="home.html"><img src="../images/EnjineLogoTransparent.png" alt="Enjine"></a>
   <ul>
     <li><a href="#">Home</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
 </nav>
-<div class="language-select">
-  <button onclick="changeLanguage('en')">English</button>
-  <button onclick="changeLanguage('ru')">Русский</button>
-</div>
   <main id="main-index">
     <h1>Welcome to Enjine!</h1>
     <h2>Our Games</h2>
@@ -30,6 +26,9 @@
 			generateGamesList();
 		</script>
     </ul>
+    <div class="language-select">
+      <img src="../images/ru.png" alt="Русский" onclick="changeLanguage('ru')">
+    </div>
   </main>
 </body>
 </html>
