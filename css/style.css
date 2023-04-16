@@ -109,6 +109,7 @@ main {
 h1, h2 { 
   color: var(--text-color);
   text-align: center;
+  margin-top: 0px;
 }
 
 
@@ -120,7 +121,7 @@ h1, h2 {
   align-content: center;
   gap: 30px;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-left: 0;
   padding-left: 0;
   text-align: center;
@@ -210,14 +211,18 @@ h1, h2 {
   margin-bottom: 10px;
 }
 
-#games-list .download-btn:hover {
+#games-list .download-btn:hover:not([disabled]) {
   cursor: pointer;
   background-color: red;
   border: 1px solid #e53935;
 }
 
+#games-list .download-btn:disabled {
+  cursor: default;
+}
 
 /* Social links */
+
 #social-links {
   position: fixed;
   bottom: 0;
@@ -338,7 +343,7 @@ footer {
 }
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   header {
     display: flex;
     flex-direction: column;
@@ -379,15 +384,16 @@ footer {
   }
 
   #social-links {
-    padding: 30px;
+    position:relative;
+    padding: 0px;
   }
 
   #copyright{
-    position: fixed;
+    position:relative;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 10px;
+    padding: 0px;
   }
 }
 
@@ -411,14 +417,15 @@ footer {
   }
 
   #social-links {
-    padding: 30px;
+    position:relative;
+    padding: 0px;
   }
 
   #copyright{
-    position: fixed;
+    position:relative;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 10px;
+    padding: 0px;
   }
 }

@@ -53,10 +53,17 @@ function generateGamesList() {
 	  }
 	  li.appendChild(releaseDateEl);
 
-    const downloadLink = document.createElement('a');
-	  downloadLink.href = game.link;
-	  downloadLink.innerHTML = game.link!=='' ? '<i class="fa-solid fa-download"></i> Скачать' : '<i class="fa-solid fa-clock"></i> Скоро' ;
+    const downloadLink = document.createElement('button');
+    downloadLink.innerHTML = '<i class="fa-solid fa-download"></i> Скачать';
     downloadLink.classList.add('download-btn');
+    if (game.link === '') {
+      downloadLink.innerHTML = '<i class="fa-solid fa-clock"></i> Скоро';
+      downloadLink.disabled = true;
+    } else {
+      downloadLink.addEventListener('click', () => {
+        window.location.href = game.link;
+      });
+    }
     li.appendChild(downloadLink);
 	  
     if(game.version) {
