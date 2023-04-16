@@ -47,7 +47,6 @@ nav {
 
 nav img {
   max-height: 50px;
-  margin-right: 1rem;
 }
 
 
@@ -71,6 +70,19 @@ nav ul {
 
 nav ul li {
   margin: 0 1rem;
+}
+
+.language-select {
+  margin-left: 1rem;
+  padding: 10px;
+  position: absolute;
+  left: 50px;
+}
+
+.language-select img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
 }
 
 /* Main content */
@@ -97,20 +109,6 @@ main {
 h1, h2 { 
   color: var(--text-color);
   text-align: center;
-}
-
-.language-select {
-  position: fixed;
-  bottom: 0;
-  left: auto;
-  right: 10px;
-  padding: 10px;
-}
-
-.language-select img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
 }
 
 
