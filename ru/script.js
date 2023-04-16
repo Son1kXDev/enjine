@@ -3,18 +3,18 @@ const games = [
     title: 'Offroaded',
     engine: '<i class="fa-brands fa-unity"></i>',
     releaseDate: '<i class="fa-solid fa-infinity"></i>',
-    status: 'in development',
+    status: 'в разработке',
     version: '',
-    image: 'images/preview/offroaded-preview.png',
+    image: '../images/preview/offroaded-preview.png',
     link: ''
   },  
   {
     title: '5opka Game',
     engine: '<i class="fa-brands fa-unity"></i>',
     releaseDate: '<i class="fa-solid fa-infinity"></i>',
-    status: 'in development',
+    status: 'в разработке',
     version:'',
-    image: 'images/preview/5opka-preview.jpg',
+    image: '../images/preview/5opka-preview.jpg',
     link: ''
   }
 ];
@@ -47,15 +47,15 @@ function generateGamesList() {
 	  const releaseDateEl = document.createElement('p');
 	  releaseDateEl.classList.add('release-date');
 	  if (new Date(game.releaseDate) > new Date()) {
-		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Planned release date: ${game.releaseDate}`;
+		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Планируемая дата выхода: ${game.releaseDate}`;
 	  } else {
-		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Release date: ${game.releaseDate}`;
+		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Дата выхода: ${game.releaseDate}`;
 	  }
 	  li.appendChild(releaseDateEl);
 
     const downloadLink = document.createElement('a');
 	  downloadLink.href = game.link;
-	  downloadLink.innerHTML = game.link!=='' ? '<i class="fa-solid fa-download"></i> Download' : '<i class="fa-solid fa-clock"></i> Coming soon' ;
+	  downloadLink.innerHTML = game.link!=='' ? '<i class="fa-solid fa-download"></i> Скачать' : '<i class="fa-solid fa-clock"></i> Скоро' ;
     downloadLink.classList.add('download-btn');
     li.appendChild(downloadLink);
 	  
