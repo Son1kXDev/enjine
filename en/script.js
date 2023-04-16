@@ -1,4 +1,4 @@
-import games from './js/games.js';
+import games from '../js/games.js';
 
 function generateGamesList() {
   const gamesList = document.getElementById('games-list');
