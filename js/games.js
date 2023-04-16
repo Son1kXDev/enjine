@@ -4,9 +4,9 @@ const games = [
       engine: '<i class="fa-brands fa-unity"></i>',
       releaseDate: '<i class="fa-solid fa-infinity"></i>',
       status: 'in development',
-      version: '0.1.1',
+      version: '',
       image: '../images/preview/offroaded-preview.png',
-      link: 'youtube.com'
+      link: ''
     },  
     {
       title: '5opka Game',
