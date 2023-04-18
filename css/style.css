@@ -124,7 +124,7 @@ h1, h2 {
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -164,6 +164,11 @@ h1, h2 {
   font-weight: bold;
   margin: 20px 0 10px;
   text-align: center;
+}
+
+#games-list li img{
+  max-width: 410px;
+  max-height: 410px;
 }
 
 #games-list .release-date {
