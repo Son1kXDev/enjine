@@ -26,7 +26,12 @@ function openGamePopup(game) {
   titleEl.innerHTML = game.engine + ' ' + game.title;
 
   const descriptionEl = document.createElement('p');
+  descriptionEl.classList.add('description');
   descriptionEl.innerHTML = game.description.ru;
+
+  const descriptionLowerEl = document.createElement('div');
+  descriptionLowerEl.classList.add('descriptionLow');
+  descriptionLowerEl.innerHTML = game.descriptionLow.ru;
 
   const screenshotsEl = document.createElement('div');
   screenshotsEl.classList.add('screenshots');
@@ -53,6 +58,7 @@ function openGamePopup(game) {
   popupContent.appendChild(closeBtn);
   popupContent.appendChild(titleEl);
   popupContent.appendChild(descriptionEl);
+  popupContent.appendChild(descriptionLowerEl);
   popupContent.appendChild(screenshotsEl);
   popupContent.appendChild(downloadBtn);
   popupContainer.appendChild(popupContent);

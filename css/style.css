@@ -291,6 +291,14 @@ h1, h2 {
   font-size: 16px;
 }
 
+.popup-content .description{
+  display: block;
+}
+
+.popup-content .descriptionLow{
+  display: none;
+}
+
 .popup-content .screenshots {
   overflow-x: auto;
   overflow-y: hidden;
@@ -492,7 +500,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 1480px) {
+@media screen and (min-width: 1480px) and (min-height: 800px) {
 
   .popup-content {
     max-width: 60%;
@@ -512,11 +520,11 @@ footer {
   }
 
   .popup-content .screenshots {
-    max-height: 200px;
+    max-height: 300px;
   }
 
   .popup-content .screenshots img {
-    max-height: 200px;
+    max-height: 300px;
     margin-right: 5px;
   }
 }
@@ -592,6 +600,33 @@ footer {
   }
 }
 
+@media screen and (max-height: 1000px) and (max-width: 1480px) {
+  .popup-content {
+    max-width: 98%;
+    padding: 13px;
+  }
+
+  .popup-content h1 {
+    font-size: 26px;
+  }
+
+  .popup-content p {
+    font-size: 14px;
+  }
+
+  .popup-content .download-btn {
+    font-size: 16px;
+  }
+
+  .popup-content .screenshots {
+    max-height: 200px; /* Уменьшаем максимальную высоту блока со скриншотами */
+  }
+
+  .popup-content .screenshots img {
+    max-height: 200px; /* Уменьшаем максимальную высоту изображений скриншотов */
+    margin-right: 5px; /* Уменьшаем отступ между изображениями */
+  }
+}
 
 @media (max-width: 767px) {
   .popup-content {
@@ -622,7 +657,65 @@ footer {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-height: 820px) {
+  .popup-content {
+    max-width: 99%; /* Уменьшаем максимальную ширину до 90% */
+    padding: 3px; /* Уменьшаем отступы внутри контента */
+  }
+
+  .popup-content h1 {
+    font-size: 20px; /* Уменьшаем размер заголовка */
+  }
+
+  .popup-content p {
+    font-size: 12px; /* Уменьшаем размер текста */
+  }
+
+  .popup-content .download-btn {
+    padding: 5px 15px; /* Уменьшаем размер кнопки */
+    font-size: 12px; /* Уменьшаем размер текста на кнопке */
+  }
+
+  .popup-content .screenshots {
+    max-height: 150px; /* Уменьшаем максимальную высоту блока со скриншотами */
+  }
+
+  .popup-content .screenshots img {
+    max-height: 150px; /* Уменьшаем максимальную высоту изображений скриншотов */
+    margin-right: 3px; /* Уменьшаем отступ между изображениями */
+  }
+}
+
+@media (max-height: 620px) {
+  .popup-content {
+    max-width: 99%;
+    padding: 3px;
+  }
+
+  .popup-content h1 {
+    font-size: 16px;
+  }
+
+  .popup-content p {
+    font-size: 10px;
+  }
+
+  .popup-content .download-btn {
+    padding: 5px 15px;
+    font-size: 12px;
+  }
+
+  .popup-content .screenshots {
+    max-height: 125px;
+  }
+
+  .popup-content .screenshots img {
+    max-height: 125px;
+    margin-right: 3px;
+  }
+}
+
+@media screen and (max-width: 580px) {
   header h1 {
     font-size: 1.2rem;
   }
@@ -672,8 +765,101 @@ footer {
     font-size: 13px; /* Уменьшаем размер текста */
   }
 
+  .popup-content .screenshots{
+    margin-bottom: 1px;
+    margin-top: 1px;
+  }
+
   .popup-content .download-btn {
     padding: 7px 15px; /* Уменьшаем размер кнопки */
     font-size: 13px; /* Уменьшаем размер текста на кнопке */
+  }
+}
+
+@media screen and (max-height: 850px) {
+  .popup-content {
+    max-width: 99%; /* Уменьшаем максимальную ширину до 90% */
+    padding: 2px; /* Уменьшаем отступы внутри контента */
+  }
+
+  .popup-content h1 {
+    font-size: 18px; /* Уменьшаем размер заголовка */
+  }
+
+  .popup-content p {
+    font-size: 11px; /* Уменьшаем размер текста */
+  }
+  
+  .popup-content .screenshots{
+    margin-bottom: 1px;
+    margin-top: 1px;
+  }
+
+  .popup-content .download-btn {
+    padding: 5px 10px; /* Уменьшаем размер кнопки */
+    font-size: 11px; /* Уменьшаем размер текста на кнопке */
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .popup-content {
+    max-width: 100%; /* Уменьшаем максимальную ширину до 90% */
+    padding: 5px; /* Уменьшаем отступы внутри контента */
+  }
+
+  .popup-content h1 {
+    font-size: 16px; /* Уменьшаем размер заголовка */
+  }
+
+  .popup-content p {
+    font-size: 10px; /* Уменьшаем размер текста */
+  }
+
+  .popup-content .screenshots{
+    margin-bottom: 1px;
+    margin-top: 1px;
+  }
+
+  .popup-content .download-btn {
+    padding: 5px 10px; /* Уменьшаем размер кнопки */
+    font-size: 10px; /* Уменьшаем размер текста на кнопке */
+  }
+}
+
+@media screen and (max-height: 580px) {
+  .popup-content {
+    max-width: 100%;
+    padding: 6px;
+  }
+
+  .popup-content h1 {
+    margin-top: 10px;
+    font-size: 22px;
+  }
+
+  .popup-content h3 {
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .popup-content .description {
+    display:none;
+  }
+
+  .popup-content .descriptionLow{
+    display:block;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .popup-content .screenshots{
+    margin-bottom: 1px;
+    margin-top: 1px;
+  }
+
+  .popup-content .download-btn {
+    padding: 5px 10px; /* Уменьшаем размер кнопки */
+    font-size: 10px; /* Уменьшаем размер текста на кнопке */
   }
 }
