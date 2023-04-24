@@ -1,5 +1,65 @@
 import games from '../js/games.js';
 
+function openGamePopup(game) {
+  const popupContainer = document.createElement('div');
+  popupContainer.classList.add('popup-container');
+
+  const popupContent = document.createElement('div');
+  popupContent.classList.add('popup-content');
+
+  const closeBtn = document.createElement('span');
+  closeBtn.innerHTML = '&times;';
+  closeBtn.classList.add('close-btn');
+  closeBtn.addEventListener('click', function() {
+    var currentUrl = window.location.href;
+    var gameTitle = '#' + game.title;
+    var newUrl = currentUrl.replace(gameTitle, '');
+    window.history.replaceState({}, document.title, newUrl);
+    document.body.classList.remove('popup-open');
+    popupContent.classList.add('popup-content-close');
+    setTimeout(function() {
+    popupContainer.remove();
+    }, 500);
+  });
+
+  const titleEl = document.createElement('h1');
+  titleEl.innerHTML = game.engine + ' ' + game.title;
+
+  const descriptionEl = document.createElement('p');
+  descriptionEl.innerHTML = game.description.en;
+
+  const screenshotsEl = document.createElement('div');
+  screenshotsEl.classList.add('screenshots');
+
+  game.screenshots.forEach(screenshot => {
+    const screenshotEl = document.createElement('img');
+    screenshotEl.src = screenshot;
+    screenshotEl.alt = 'Screenshot';
+    screenshotsEl.appendChild(screenshotEl);
+  });
+
+  const downloadBtn = document.createElement('button');
+  downloadBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download';
+  downloadBtn.classList.add('download-btn');
+  if (game.link === '') {
+    downloadBtn.innerHTML = '<i class="fa-solid fa-clock"></i> Coming soon';
+    downloadBtn.disabled = true;
+  } else {
+    downloadBtn.addEventListener('click', () => {
+      window.location.href = game.link;
+    });
+  }
+
+  popupContent.appendChild(closeBtn);
+  popupContent.appendChild(titleEl);
+  popupContent.appendChild(descriptionEl);
+  popupContent.appendChild(screenshotsEl);
+  popupContent.appendChild(downloadBtn);
+  popupContainer.appendChild(popupContent);
+  document.body.appendChild(popupContainer);
+  document.body.classList.add('popup-open');
+}
+
 function generateGamesList() {
   const gamesList = document.getElementById('games-list');
   gamesList.innerHTML = '';
@@ -7,11 +67,26 @@ function generateGamesList() {
   games.forEach(game => {
     const li = document.createElement('li');
 
+    if(game.usePopup){
+    const popupLink = document.createElement('a');
+    popupLink.href = '#' + game.title;
+    popupLink.addEventListener('click', () => {
+      openGamePopup(game);
+    });
+
     const imgEl = document.createElement('img');
     imgEl.src = game.image || '';
     imgEl.alt = game.title;
+    imgEl.addEventListener('click', () => {
+      popupLink.click();
+    });
     li.appendChild(imgEl);
-
+    } else {
+      const imgEl = document.createElement('img');
+      imgEl.src = game.image || '';
+      imgEl.alt = game.title;
+      li.appendChild(imgEl);
+    }
     const titleContainer = document.createElement('div');
     titleContainer.classList.add('title-container');
     li.appendChild(titleContainer);
@@ -22,7 +97,7 @@ function generateGamesList() {
 
     const statusEl = document.createElement('span');
     statusEl.classList.add('status');
-    statusEl.innerHTML = game.status;
+    statusEl.innerHTML = game.status.en;
     titleContainer.appendChild(statusEl);
 
 	  const releaseDateEl = document.createElement('p');
@@ -33,20 +108,6 @@ function generateGamesList() {
 		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Release date: ${game.releaseDate}`;
 	  }
 	  li.appendChild(releaseDateEl);
-
-    const downloadLink = document.createElement('button');
-    downloadLink.innerHTML = '<i class="fa-solid fa-download"></i> Download';
-    downloadLink.classList.add('download-btn');
-    if (game.link === '') {
-      downloadLink.innerHTML = '<i class="fa-solid fa-clock"></i> Coming soon';
-      downloadLink.disabled = true;
-    } else {
-      downloadLink.addEventListener('click', () => {
-        window.location.href = game.link;
-      });
-    }
-    li.appendChild(downloadLink);
-    
 	  
     if(game.version) {
       const versionEl = document.createElement('v');
@@ -56,6 +117,10 @@ function generateGamesList() {
       }
 
     gamesList.appendChild(li);
+
+    if (window.location.hash === '#' + game.title) {
+      openGamePopup(game);
+    }    
   });
 }
 
