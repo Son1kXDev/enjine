@@ -22,9 +22,9 @@ const games = [
         ru: 'в разработке',
         en: 'in development'
       },
-      version: '',
+      version: '0.1.0 beta',
       image: '../images/preview/offroaded-preview.png',
-      link: ''
+      link: '../games/offroaded/offroaded_v0.1.0beta.apk'
     },  
     {
       title: '5opka Game',
