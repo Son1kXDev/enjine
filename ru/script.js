@@ -43,6 +43,10 @@ function openGamePopup(game) {
     screenshotsEl.appendChild(screenshotEl);
   });
 
+  const versionEl = document.createElement('p');
+  versionEl.classList.add('version');
+  versionEl.innerText = `Версия: ${game.version}`;
+
   const downloadBtn = document.createElement('button');
   downloadBtn.innerHTML = '<i class="fa-solid fa-download"></i> Скачать';
   downloadBtn.classList.add('download-btn');
@@ -60,6 +64,7 @@ function openGamePopup(game) {
   popupContent.appendChild(descriptionEl);
   popupContent.appendChild(descriptionLowerEl);
   popupContent.appendChild(screenshotsEl);
+  popupContent.appendChild(versionEl);
   popupContent.appendChild(downloadBtn);
   popupContainer.appendChild(popupContent);
   document.body.appendChild(popupContainer);
@@ -79,20 +84,15 @@ function generateGamesList() {
     popupLink.addEventListener('click', () => {
       openGamePopup(game);
     });
-
+    li.addEventListener('click', () => {
+      popupLink.click();
+    });
+    } 
     const imgEl = document.createElement('img');
     imgEl.src = game.image || '';
     imgEl.alt = game.title;
-    imgEl.addEventListener('click', () => {
-      popupLink.click();
-    });
     li.appendChild(imgEl);
-    } else {
-      const imgEl = document.createElement('img');
-      imgEl.src = game.image || '';
-      imgEl.alt = game.title;
-      li.appendChild(imgEl);
-    }
+
     const titleContainer = document.createElement('div');
     titleContainer.classList.add('title-container');
     li.appendChild(titleContainer);

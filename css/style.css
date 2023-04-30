@@ -195,6 +195,12 @@ h1, h2 {
 #games-list li img{
   max-width: 410px;
   max-height: 410px;
+  
+  transition: transform 300ms;
+}
+
+#games-list li:hover img{
+  transform: scale(1.05);
 }
 
 #games-list .release-date {
@@ -286,13 +292,13 @@ h1, h2 {
 }
 
 .popup-content h1 {
-  margin-top: 0;
+  margin-top: 10px;
   font-size: 32px;
 }
 
 .popup-content p {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .popup-content .description{
@@ -319,6 +325,13 @@ h1, h2 {
   max-height: 275px; 
   object-fit: cover;
   margin-right: 10px;
+}
+
+.popup-content .version {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: none;
+  margin: 0px 0 0px;
 }
 
 .popup-content .download-btn {
@@ -486,7 +499,7 @@ footer {
     font-size: 42px;
   }
 
-  .popup-content p {
+  .popup-content p  {
     font-size: 24px;
   }
 
@@ -515,8 +528,8 @@ footer {
     font-size: 28px;
   }
 
-  .popup-content p {
-    font-size: 16px;
+  .popup-content p  {
+    font-size: 18px;
   }
 
   .popup-content .download-btn {
@@ -586,8 +599,8 @@ footer {
     font-size: 28px;
   }
 
-  .popup-content p {
-    font-size: 16px;
+  .popup-content p  {
+    font-size: 18px;
   }
 
   .popup-content .download-btn {
@@ -614,8 +627,8 @@ footer {
     font-size: 26px;
   }
 
-  .popup-content p {
-    font-size: 14px;
+  .popup-content p  {
+    font-size: 16px;
   }
 
   .popup-content .download-btn {
@@ -623,70 +636,58 @@ footer {
   }
 
   .popup-content .screenshots {
-    max-height: 200px; /* Уменьшаем максимальную высоту блока со скриншотами */
+    max-height: 200px;
   }
 
   .popup-content .screenshots img {
-    max-height: 200px; /* Уменьшаем максимальную высоту изображений скриншотов */
-    margin-right: 5px; /* Уменьшаем отступ между изображениями */
+    max-height: 200px;
   }
 }
 
 @media (max-width: 767px) {
   .popup-content {
-    max-width: 90%; /* Уменьшаем максимальную ширину до 90% */
-    padding: 10px; /* Уменьшаем отступы внутри контента */
+    max-width: 90%;
+    padding: 10px;
   }
 
   .popup-content h1 {
-    font-size: 24px; /* Уменьшаем размер заголовка */
+    font-size: 24px;
   }
 
-  .popup-content p {
-    font-size: 14px; /* Уменьшаем размер текста */
+  .popup-content p  {
+    font-size: 16px;
   }
 
-  .popup-content .download-btn {
-    padding: 10px 20px; /* Уменьшаем размер кнопки */
-    font-size: 14px; /* Уменьшаем размер текста на кнопке */
-  }
 
   .popup-content .screenshots {
-    max-height: 200px; /* Уменьшаем максимальную высоту блока со скриншотами */
+    max-height: 200px;
   }
 
   .popup-content .screenshots img {
-    max-height: 200px; /* Уменьшаем максимальную высоту изображений скриншотов */
-    margin-right: 5px; /* Уменьшаем отступ между изображениями */
+    max-height: 200px;
   }
 }
 
 @media (max-height: 820px) {
   .popup-content {
-    max-width: 99%; /* Уменьшаем максимальную ширину до 90% */
-    padding: 3px; /* Уменьшаем отступы внутри контента */
+    max-width: 99%;
+    padding: 3px;
   }
 
   .popup-content h1 {
-    font-size: 20px; /* Уменьшаем размер заголовка */
+    font-size: 20px;
   }
 
-  .popup-content p {
-    font-size: 12px; /* Уменьшаем размер текста */
-  }
-
-  .popup-content .download-btn {
-    padding: 5px 15px; /* Уменьшаем размер кнопки */
-    font-size: 12px; /* Уменьшаем размер текста на кнопке */
+  .popup-content p  {
+    font-size: 14px;
   }
 
   .popup-content .screenshots {
-    max-height: 150px; /* Уменьшаем максимальную высоту блока со скриншотами */
+    max-height: 150px;
   }
 
   .popup-content .screenshots img {
-    max-height: 150px; /* Уменьшаем максимальную высоту изображений скриншотов */
-    margin-right: 3px; /* Уменьшаем отступ между изображениями */
+    max-height: 150px;
   }
 }
 
@@ -700,13 +701,8 @@ footer {
     font-size: 16px;
   }
 
-  .popup-content p {
-    font-size: 10px;
-  }
-
-  .popup-content .download-btn {
-    padding: 5px 15px;
-    font-size: 12px;
+  .popup-content p  {
+    font-size: 14px;
   }
 
   .popup-content .screenshots {
@@ -715,7 +711,6 @@ footer {
 
   .popup-content .screenshots img {
     max-height: 125px;
-    margin-right: 3px;
   }
 }
 
@@ -757,77 +752,50 @@ footer {
   }
 
   .popup-content {
-    max-width: 87%; /* Уменьшаем максимальную ширину до 90% */
-    padding: 10px; /* Уменьшаем отступы внутри контента */
+    max-width: 87%;
+    padding: 10px;
   }
 
   .popup-content h1 {
-    font-size: 20px; /* Уменьшаем размер заголовка */
+    font-size: 20px; 
   }
 
-  .popup-content p {
-    font-size: 13px; /* Уменьшаем размер текста */
+  .popup-content p  {
+    font-size: 14px;
   }
 
-  .popup-content .screenshots{
-    margin-bottom: 1px;
-    margin-top: 1px;
-  }
-
-  .popup-content .download-btn {
-    padding: 7px 15px; /* Уменьшаем размер кнопки */
-    font-size: 13px; /* Уменьшаем размер текста на кнопке */
-  }
 }
 
 @media screen and (max-height: 850px) {
   .popup-content {
-    max-width: 99%; /* Уменьшаем максимальную ширину до 90% */
-    padding: 2px; /* Уменьшаем отступы внутри контента */
+    max-width: 99%;
+    padding: 2px;
   }
 
   .popup-content h1 {
-    font-size: 18px; /* Уменьшаем размер заголовка */
+    font-size: 18px;
   }
 
-  .popup-content p {
-    font-size: 11px; /* Уменьшаем размер текста */
-  }
-  
-  .popup-content .screenshots{
-    margin-bottom: 1px;
-    margin-top: 1px;
+  .popup-content p  {
+    font-size: 14px;
   }
 
-  .popup-content .download-btn {
-    padding: 5px 10px; /* Уменьшаем размер кнопки */
-    font-size: 11px; /* Уменьшаем размер текста на кнопке */
-  }
 }
 
 @media screen and (max-height: 650px) {
   .popup-content {
-    max-width: 100%; /* Уменьшаем максимальную ширину до 90% */
-    padding: 5px; /* Уменьшаем отступы внутри контента */
+    max-width: 100%;
+    padding: 5px;
   }
 
   .popup-content h1 {
-    font-size: 16px; /* Уменьшаем размер заголовка */
+    font-size: 16px;
   }
 
-  .popup-content p {
-    font-size: 10px; /* Уменьшаем размер текста */
+  .popup-content p  {
+    font-size: 14px;
   }
 
-  .popup-content .screenshots{
-    margin-bottom: 1px;
-    margin-top: 1px;
-  }
-
-  .popup-content .download-btn {
-    padding: 5px 10px; /* Уменьшаем размер кнопки */
-    font-size: 10px; /* Уменьшаем размер текста на кнопке */
-  }
 }
 
 @media screen and (max-height: 580px) {
@@ -857,13 +825,4 @@ footer {
     margin-bottom: 10px;
   }
 
-  .popup-content .screenshots{
-    margin-bottom: 1px;
-    margin-top: 1px;
-  }
-
-  .popup-content .download-btn {
-    padding: 5px 10px; /* Уменьшаем размер кнопки */
-    font-size: 10px; /* Уменьшаем размер текста на кнопке */
-  }
 }
