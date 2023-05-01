@@ -1,0 +1,105 @@
+@import url("root.css");
+  
+  *{
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-sans-serif);
+    background: rgb(33,32,40);
+    background: linear-gradient(135deg, #2e3a83, #541a87);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    color: var(--text-color);
+  }
+  
+  h1, h2, h3 {
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 0px;
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+
+  #main-index {
+    max-width: 1800px;
+    }
+    
+    #main-about {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    }
+    
+    #main-about a {
+    color: var(--text-color);
+    }
+    
+    #text-center {
+    text-align: center;
+    }
+
+/* Media */
+
+@media (max-width: 600px) {
+ 
+    #main-about{
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    }
+        
+    #main-about h2{
+    font-size: 1.8rem;
+    }
+        
+    #main-about p{
+    font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    #main-about{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    header h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    header nav {
+      margin-bottom: 1rem;
+    }
+    
+    main {
+      padding: 1rem;
+      max-width: 800px;
+      text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  
+  main {
+    padding: 1rem;
+    max-width: 800px;
+    text-align: center;
+  }
+}
