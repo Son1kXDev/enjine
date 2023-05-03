@@ -4,10 +4,15 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: auto;
     padding: 10px;
   }
   
+  #social-links img{
+    height: 0.85em;
+    vertical-align:top;
+  }
+
   #social-links li {
     display: inline-block;
     margin-right: 10px;
@@ -55,7 +60,7 @@
     right: 10px;
     padding: 10px;
   }
-  
+
   #copyright img{
     height: 0.85em;
     vertical-align:top;

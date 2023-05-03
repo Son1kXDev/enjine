@@ -8,12 +8,24 @@
     margin: 0;
     font-family: var(--font-sans-serif);
     background: rgb(33,32,40);
-    background: linear-gradient(135deg, #2e3a83, #541a87);
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
     color: var(--text-color);
   }
   
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
   h1, h2, h3 {
     color: var(--text-color);
     text-align: center;
@@ -26,12 +38,14 @@
 
   #main-index {
     max-width: 1800px;
+    z-index: 1;
     }
     
     #main-about {
     display: block;
     max-width: 800px;
     margin: 0 auto;
+    z-index: 1;
     }
     
     #main-about a {

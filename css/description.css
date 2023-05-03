@@ -1,0 +1,196 @@
+@import url("root.css");
+
+.game-title {
+font-size: 36px;
+margin: 0;
+padding: 0;
+color: var(--text-color);
+}
+
+.game-subtitle {
+font-size: 24px;
+margin: 0;
+padding: 0;
+color: var(--text-color);
+}
+
+.game-release-date {
+font-size: 16px;
+margin: 0;
+padding: 0;
+padding-bottom: 10px;
+color: var(--text-color);
+}
+
+.game-banner {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 400px;
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width:thin;
+
+}
+
+.game-banner img {
+    flex-shrink: 0;
+    width: auto;
+    max-height: 275px; 
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.game-banner::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  
+.game-banner::-webkit-scrollbar-track {
+    background-color: #ffffff00;
+}
+  
+.game-banner::-webkit-scrollbar-thumb {
+    background-color: #0000007a;
+}
+  
+
+.game-info {
+padding: 20px;
+}
+
+.game-description h2 {
+font-size: 24px;
+margin-top: 0;
+color: var(--text-color);
+}
+
+.game-system-req h2,
+.game-features h2,
+.game-buy h2 {
+font-size: 24px;
+margin-top: 0;
+margin-bottom: 20px;
+color: var(--text-color);
+}
+
+.game-system-req table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+
+.game-system-req td {
+padding: 5px;
+border: 1px solid #ccc;
+color: var(--text-color);
+}
+
+.game-price {
+font-size: 24px;
+font-weight: bold;
+margin: 0;
+color: var(--accent-color);
+}
+
+.game-buy {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-buy-btn {
+    background-color: #e53935;
+    text-decoration: none;
+    border: none;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex: 1;
+    max-width: 200px;
+    margin: 5px;
+}
+
+.game-buy-btn:hover:not([disabled]) {
+    cursor: pointer;
+    background-color: red;
+    border: 1px solid #e53935;
+}
+
+.game-buy-btn:disabled {
+    cursor: default;
+}
+
+@media only screen and (min-width: 600px) {
+    .game-banner::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .game-title {
+    font-size: 36px;
+    }
+    .game-subtitle {
+        font-size: 24px;
+        margin: 10px 0 0;
+    }
+    
+    .game-release-date {
+        font-size: 16px;
+        margin: 10px 0 0;
+    }
+    
+    .game-info {
+        padding: 20px;
+    }
+    
+    .game-description h2,
+    .game-system-req h2,
+    .game-features h2,
+    .game-buy h2 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    
+    .game-system-req td {
+        padding: 5px;
+    }
+    
+    .game-price {
+        font-size: 24px;
+    }
+    
+    .game-buy-btn {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .game-banner::-webkit-scrollbar {
+        width: 0px;
+    }
+    
+    .game-banner::-webkit-scrollbar-track {
+        background-color: #ffffff00;
+    }
+      
+    .game-banner::-webkit-scrollbar-thumb {
+        background-color: #00000000;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .game-banner::-webkit-scrollbar {
+        width: 0px;
+    }
+    .game-buy-btn {
+      width: 100%;
+    }
+  }
+  
