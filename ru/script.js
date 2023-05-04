@@ -7,7 +7,7 @@ function generateGamesList() {
   games.forEach(game => {
     const li = document.createElement('li');
 
-    if(game.link.ru != ''){
+    if(game.link.ru != undefined) {
     const gameLink = document.createElement('a');
     gameLink.href = game.link.ru;
     li.addEventListener('click', () => {
