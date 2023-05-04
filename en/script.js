@@ -35,27 +35,22 @@ function generateGamesList() {
 
 	  const releaseDateEl = document.createElement('p');
 	  releaseDateEl.classList.add('release-date');
-	  if (new Date(game.releaseDate) > new Date()) {
-		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Planned release date: ${game.releaseDate}`;
-	  } else {
+	  if (new Date(game.releaseDate) <= new Date()) {
 		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Release date: ${game.releaseDate}`;
+	  } else {
+		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Planned release date: ${game.releaseDate}`;
 	  }
 	  li.appendChild(releaseDateEl);
 	  
-    if(game.version) {
-      const versionEl = document.createElement('v');
-      versionEl.classList.add('version');
-      versionEl.innerText = `${game.version}`;
-      li.appendChild(versionEl);
+    if(game.info.en) {
+      const infoEl = document.createElement('info');
+      infoEl.classList.add('verison');
+      infoEl.innerText = `${game.info.en}`;
+      li.appendChild(infoEl);
       }
 
     gamesList.appendChild(li);
-
-    if (window.location.hash === '#' + game.title) {
-      openGamePopup(game);
-    }    
   });
 }
 
-// Call the generateGamesList function on page load to populate the list of games
 generateGamesList();
