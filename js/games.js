@@ -33,7 +33,7 @@ const games = [
         ru: 'БЕТА',
         en: 'BETA'
       },
-      version: '0.1.0 beta',
+      version: '0.1.1 beta',
       info: {
         ru: 'Бета доступна для скачивания',
         en: 'Beta is available for download'
@@ -45,11 +45,11 @@ const games = [
       },
       downloadLink: [
         {
-          link: '../games/offroaded/offroaded_v0.1.0beta.apk',
+          link: '../games/offroaded/offroaded_v0.1.1beta.apk',
           platform: 'Android'
         },
         {
-          link: '../games/offroaded/Offroaded Beta 0.1.0.exe',
+          link: '../games/offroaded/Offroaded Beta 0.1.1.exe',
           platform: 'Windows'
         }
       ]
