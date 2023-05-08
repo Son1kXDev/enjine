@@ -11,6 +11,7 @@
   <script src="../js/language.js"></script>
   <script src="https://kit.fontawesome.com/1d8eb1b313.js" crossorigin="anonymous"></script>
   <script type="module" src="../js/gamePage.js"></script>
+  <script src="../js/bannerAnimation.js"></script>
   <link rel="icon" href="../images/EnjineLogo.svg">
 </head>
 <body>
@@ -27,43 +28,8 @@
 		<section class="game-banner" id="game-screenshots"></section>
 		<section class="game-info">
 			<div class="game-description" id="game-description"></div>
-			<div class="game-system-req">
-                <h2>System requirements</h2>
-                <table>
-                <tr>
-                <td>Operating system:</td>
-                <td>Android 5.0 Lolipop or above</td>
-                <td>Windows 7 or above</td>
-                </tr>
-                <tr>
-                <td>Processor:</td>
-                <td>ARM7 / ARM64</td>
-                <td>x64</td>
-                </tr>
-                <tr>
-                <td>RAM:</td>
-                <td>1GB or above</td>
-                <td>1GB or above</td>
-                </tr>
-                <tr>
-                <td>Free space:</td>
-                <td>200mb or above</td>
-                <td>200mb or above</td>
-                </tr>
-                <td>Permissions:</td>
-                <td>Access to photo library</td>
-                </tr>
-				</table>
-			</div>
-
-			<div class="game-features">
-        <h2>Changelog</h2>
-				<ul>
-          <li> Fixed a bug with the accrual of rewards for completing the map.</li>
-					<li>Fixed a bug with loading stickers on <b>Windows</b>.</li>
-					<li>Small changes on the maps.</b></li>
-				</ul>
-			</div>
+			<div class="game-system-req" id="game-system-req"></div>
+			<div class="game-update-info" id="game-update-info"></div>
       <div class="game-buy" id="game-download"></div>
 		</section>
 	</main>

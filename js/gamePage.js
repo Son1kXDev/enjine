@@ -4,6 +4,9 @@ const headerElement = document.getElementById('header');
 const screenshotsElement = document.getElementById('game-screenshots');
 const descriptionElement = document.getElementById('game-description');
 const downloadElement = document.getElementById('game-download');
+const systemRequirementsElement = document.getElementById('game-system-req');
+const updateInfoElement = document.getElementById('game-update-info');
+
 
 export function generateGamePageById(id, language){
     const game = games[id];
@@ -58,6 +61,47 @@ export function generateGamePageById(id, language){
     }
     xhr.send();
     
+    var systemRequirementsLabel = document.createElement('h2');
+    systemRequirementsLabel.innerHTML = language == "ru" ? "Системные требования" : "System requirements"
+    systemRequirementsElement.appendChild(systemRequirementsLabel);
+    var systemRequirements = game.systemRequirements;
+    var systemRequirementsTable = document.createElement('table');
+    var systemRequirementsTableBody = document.createElement('tbody');
+    var systemRequirementsTableLabels = language == "ru" ? 
+    ["Операционная система:", "Процессор:", "ОЗУ:", "Свободное место на диске:", "Разрешения:"] :
+    ["OS:", "Processor:", "RAM", "Free disk space:", "Permissions:"];
+    let ind = 0;
+    systemRequirements.forEach(rowData => {
+        var row = document.createElement('tr');
+        
+        var label = document.createElement('td');
+        label.textContent = systemRequirementsTableLabels[ind];
+        row.appendChild(label);
+        ind++;
+
+        rowData.forEach(cellData => {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            row.appendChild(cell);
+        });
+
+        systemRequirementsTableBody.appendChild(row);
+    });
+    systemRequirementsTable.appendChild(systemRequirementsTableBody);
+    systemRequirementsElement.appendChild(systemRequirementsTable);
+
+    var updateInfoLabel = document.createElement('h2');
+    updateInfoLabel.innerText = language == "ru" ? "Информация об обновлении" : "Changelog";
+    updateInfoElement.appendChild(updateInfoLabel);
+    var updateInfoList = document.createElement('ul');
+    updateInfoElement.appendChild(updateInfoList);
+    var updateInfo = language == "ru" ? game.updateInfo.ru : game.updateInfo.en;
+    updateInfo.forEach(info=> {
+        var listItem = document.createElement('li');
+        listItem.textContent = info;
+        updateInfoList.appendChild(listItem);
+    })
+
     for (let i = 0; i < game.downloadLink.length; i++) {
         var downloadLink = document.createElement('a');
         downloadLink.classList.add('game-buy-btn');

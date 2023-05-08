@@ -19,6 +19,25 @@ const games = [
         ru: '../games/offroaded/data/description_ru.txt',
         en: '../games/offroaded/data/description_en.txt',
       },
+      updateInfo:{
+        ru: [
+          'Исправлен баг с начислением награды за прохождение карты.',
+          'Исправлен баг с загрузкой стикеров на Windows.',
+          'Небольшие изменения на картах.'
+        ],
+        en: [
+          'Fixed a bug with the accrual of rewards for completing the map.',
+          'Fixed a bug with loading stickers on Windows.',
+          'Few changes on the maps.'
+        ]
+      },
+      systemRequirements:[
+        ["Android 5.0 Lollipop", "Windows 7"],
+        ["ARM7 / ARM64", "x64"],
+        ["1Gb", "1Gb"],
+        ["200mb", "200mb"],
+        ["Gallery"]
+      ],
       screenshots:[
         '../images/preview/offroaded-preview-full.png',
         '../images/games/offroaded/screenshot_1.jpg',
@@ -59,6 +78,8 @@ const games = [
       engine: '<i class="fa-brands fa-unity"></i>',
       developers: [],
       description:{},
+      updateInfo: {},
+      systemRequirements: [],
       screenshots:[],
       releaseDate: '<i class="fa-solid fa-infinity"></i>',
       status: {
