@@ -1,60 +1,60 @@
 @import url("root.css");
   
-  *{
-    box-sizing: border-box;
-  }
+*{
+  box-sizing: border-box;
+}
   
-  body {
-    margin: 0;
-    font-family: var(--font-sans-serif);
-    background: rgb(33,32,40);
-    background: linear-gradient(135deg, #8e2de2, #4a00e0);
-    background-size: 400% 400%;
-    animation: gradient 5s ease infinite;
-    color: var(--text-color);
-  }
+body {
+  margin: 0;
+  font-family: var(--font-sans-serif);
+  background: rgb(33,32,40);
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  color: var(--text-color);
+}
   
-  @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
-  h1, h2, h3 {
-    color: var(--text-color);
-    text-align: center;
-    margin-top: 0px;
-  }
+h1, h2, h3 {
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 0px;
+}
   
-  h3 {
-    font-size: 20px;
-  }
+h3 {
+  font-size: 20px;
+}
 
-  #main-index {
-    max-width: 1800px;
-    z-index: 1;
-    }
+#main-index {
+  max-width: 1800px;
+  z-index: 1;
+}
     
-    #main-about {
-    display: block;
-    max-width: 800px;
-    margin: 0 auto;
-    z-index: 1;
-    }
+#main-about {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+   z-index: 1;
+}
     
-    #main-about a {
-    color: var(--text-color);
-    }
+#main-about a {
+   color: var(--text-color);
+}
     
-    #text-center {
-    text-align: center;
-    }
+#text-center {
+  text-align: center;
+}
 
 /* Media */
 
@@ -100,7 +100,7 @@
     
     main {
       padding: 1rem;
-      max-width: 800px;
+      /* max-width: 800px; */
       text-align: center;
     }
 
@@ -113,7 +113,7 @@
   
   main {
     padding: 1rem;
-    max-width: 800px;
+    /* max-width: 800px; */
     text-align: center;
   }
 }

@@ -44,10 +44,19 @@ export function generateGamePageById(id, language){
         screenshot.src = game.screenshots[i] || '';
         screenshotsElement.appendChild(screenshot);
     }
-    var descriptionLabel = document.createElement('h2');
-    descriptionLabel.innerHTML = language == "ru" ? "Описание" : "Description";
+
+    screenshotsElement.scrollTop = 0;
+
     var description = document.createElement('div');
-    description.innerHTML = language == "ru" ? game.description.ru : game.description.en;
+    var descriptionFilePath = language == "ru" ? game.description.ru : game.description.en;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', descriptionFilePath, true);
+    xhr.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            description.innerHTML = this.responseText;
+        }
+    }
+    xhr.send();
     
     for (let i = 0; i < game.downloadLink.length; i++) {
         var downloadLink = document.createElement('a');
@@ -62,7 +71,6 @@ export function generateGamePageById(id, language){
     headerElement.appendChild(versionElement);
     headerElement.appendChild(releaseDateElement);
     headerElement.appendChild(developersElement);
-    descriptionElement.appendChild(descriptionLabel);
     descriptionElement.appendChild(description);
 };
 

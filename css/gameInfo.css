@@ -43,23 +43,24 @@
 }
 
 .game-banner {
-    overflow-x: auto;
+    padding: 0;
+    overflow-x: scroll;
     overflow-y: hidden;
-    max-height: 400px;
     white-space: nowrap;
     display: flex;
     align-items: flex-start;
-    -ms-overflow-style: none;
-    scrollbar-width:thin;
-
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
 }
 
 .game-banner img {
     flex-shrink: 0;
-    width: auto;
-    max-height: 275px; 
+    width: 100%;
+    height: auto;
     object-fit: cover;
     margin-right: 10px;
+    scroll-snap-align: center;
 }
 
 .game-banner::-webkit-scrollbar {
@@ -73,16 +74,23 @@
 .game-banner::-webkit-scrollbar-thumb {
     background-color: #0000007a;
 }
-  
-
-.game-info {
-padding: 20px;
-}
 
 .game-description h2 {
-font-size: 24px;
-margin-top: 0;
-color: var(--text-color);
+    font-size: 24px;
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.game-description p {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.game-description,
+.game-system-req,
+.game-features {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .game-system-req h2,
@@ -143,6 +151,18 @@ color: var(--accent-color);
 
 .game-buy-btn:disabled {
     cursor: default;
+}
+
+@media only screen and (min-width: 1200px) {
+    .game-banner {
+        margin: 0 5%;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .game-banner img {
+        scroll-snap-align:start;
+        width: 50%;
+    }
 }
 
 @media only screen and (min-width: 600px) {

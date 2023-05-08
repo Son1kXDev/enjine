@@ -16,8 +16,8 @@ const games = [
         }
       ],
       description:{
-        ru: '<p>Погрузитесь в захватывающие виртуальные поездки по различным картам нашей игры!Выполняйте миссии, улучшайте и настраивайте свой автомобиль, покупайте новые машины и делайте их уникальными, настраивая спойлеры, сплиттеры и подвеску, а также меняя цвет и добавляя наклейки. Не забудьте следить за регулярным обслуживанием своего автомобиля, заправлять его вовремя и чистить от грязи после каждой захватывающей поездки. Разблокируйте множество достижений и продвиньтесь в игре, исследуя разнообразные карты с различными условиями погоды.</p><p>Готовы к новым приключениям? Отправляйтесь в наши виртуальные поездки уже сегодня!</p>',
-        en: '<p>Immerse yourself in exciting virtual rides on various maps of our game!Complete missions, upgrade and customize your car, buy new cars and make them unique by adjusting spoilers, splitters and suspension, as well as changing colors and adding stickers. Do not forget to monitor the regular maintenance of your car, refuel it on time and clean it from dirt after each exciting trip. Unlock many achievements and advance in the game by exploring a variety of maps with different weather conditions.</p><p>Are you ready for a new adventure? Embark on our virtual trips today!</p>',
+        ru: '../games/offroaded/data/description_ru.txt',
+        en: '../games/offroaded/data/description_en.txt',
       },
       screenshots:[
         '../images/preview/offroaded-preview-full.png',
@@ -45,11 +45,11 @@ const games = [
       },
       downloadLink: [
         {
-          link: '../games/offroaded/offroaded_v0.1.1beta.apk',
+          link: '../games/offroaded/download/offroaded_v0.1.1beta.apk',
           platform: 'Android'
         },
         {
-          link: '../games/offroaded/Offroaded Beta 0.1.1.exe',
+          link: '../games/offroaded/download/Offroaded Beta 0.1.1.exe',
           platform: 'Windows'
         }
       ]
