@@ -1,0 +1,19 @@
+@import url("root.css");
+
+.discord-widget {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 9999;
+  }
+  
+  @media (max-width: 1200px) {
+    .discord-widget {
+      position: static;
+      margin-top: 20px;
+    }
+    .discord-widget iframe {
+      width: 100%;
+    }
+  }
+  
