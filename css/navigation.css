@@ -11,10 +11,12 @@
   nav svg {
   max-height: 50px;
   min-width: 100px;
+  cursor: pointer;
   }
   
   nav img {
   max-height: 50px;
+  cursor: pointer;
   }
   
   nav a {
