@@ -3,13 +3,7 @@ var url = window.location.href;
 
 url = (userLang.indexOf('ru') === 0 ? '/ru/' : '/en/') + url.split('/').pop();
 
-if(url=='index.html'){
+if(url == ('http://localhost:8080/' || 'https://enjine.online/'))
     url = (userLang.indexOf('ru') === 0 ? '/ru/' : '/en/') + "home";
-}
-// else if (userLang.indexOf('ru') === 0) {
-//   url = '/ru/' + url.split('/').pop();
-// } else {
-//   url = '/en/' + url.split('/').pop();
-// }
 
-window.location.href = url;
+window.location.replace(url);
