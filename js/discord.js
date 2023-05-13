@@ -16,4 +16,6 @@ closeButton.addEventListener('click', function() {
   widget.querySelector('iframe').style.display = 'none';
 });
 
+closeButton.style.display = 'none';
+
 
