@@ -21,14 +21,14 @@ const games = [
       },
       updateInfo:{
         ru: [
-          'Добавлена локализация на русский язык (80%).',
-          'Добавлена виньетка в меню гаража.',
-          'Небольшие изменения на картах.'
+          'Исправлен баг с сохранением выбранной локализации.',
+          'Полная локализация на русский язык.',
+          'Добавлено уведомление об обновлении.'
         ],
         en: [
-          'Added localization on russian (80%).',
-          'Added vignette effect in garage menu.',
-          'Few changes on the maps.'
+          'Fixed bug with saving selected localization.',
+          'Full localization into Russian.',
+          'Added update notification.'
         ]
       },
       systemRequirements:[
@@ -52,7 +52,7 @@ const games = [
         ru: 'БЕТА',
         en: 'BETA'
       },
-      version: '0.1.2 beta',
+      version: '0.1.3 beta',
       info: {
         ru: 'Бета доступна для скачивания',
         en: 'Beta is available for download'
@@ -64,11 +64,11 @@ const games = [
       },
       downloadLink: [
         {
-          link: '../games/offroaded/download/offroaded_v0.1.2beta.apk',
+          link: '../games/offroaded/download/offroaded_v0.1.3beta.apk',
           platform: 'Android'
         },
         {
-          link: '../games/offroaded/download/Offroaded Beta 0.1.2.exe',
+          link: '../games/offroaded/download/Offroaded Beta 0.1.3.exe',
           platform: 'Windows'
         }
       ]
