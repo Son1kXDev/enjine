@@ -13,13 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
   
     let index = 0;
     const length = items.length;
+    const last = length - 1;
     let isScrolling = false;
     let animationInterval;
   
     function rememberIndex() {
       const currentIndex = Math.round(album.scrollLeft / album.scrollWidth * length);
-      if (currentIndex >= length) {
-        index = length - 1;
+      if (currentIndex >= length - 1) {
+        index = last;
       } else if (currentIndex <= 0) {
         index = 0;
       } else {
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function animate() {
       const current = items[index];
       const nextIndex = (index + 1) % length;
-      const next = items[nextIndex];
+      const next = items[window.innerWidth >= 1200 && nextIndex == last ? 0 : nextIndex];
   
       if (!current || !next) {
         console.error("Элементы не найдены");
