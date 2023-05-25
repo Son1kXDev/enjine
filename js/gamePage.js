@@ -5,11 +5,16 @@ const screenshotsElement = document.getElementById('game-screenshots');
 const descriptionElement = document.getElementById('game-description');
 const downloadElement = document.getElementById('game-download');
 const systemRequirementsElement = document.getElementById('game-system-req');
-const updateInfoElement = document.getElementById('game-update-info');
+const changelogElement = document.getElementById('game-update-info');
 
+var url = window.location.href;
+const language = url.includes('ru') ? 'ru' : 'en';
+const RU = language == "ru";
 
-export function generateGamePageById(id, language){
+export function generateGamePageById(id){
     const game = games[id];
+
+    const gameFolder = "../games/" + game.name + "/";
 
     var titleElement = document.createElement('h1');
     titleElement.classList.add('game-title');
@@ -17,41 +22,46 @@ export function generateGamePageById(id, language){
 
     var versionElement = document.createElement('h1');
     versionElement.classList.add('game-subtitle');
-    versionElement.innerHTML = language == "ru" ? "Версия: " : "Version: ";
+    versionElement.innerHTML = RU ? "Версия: " : "Version: ";
     versionElement.innerHTML += game.version;
 
     var releaseDateElement = document.createElement('h1');
     releaseDateElement.classList.add('game-release-date');
     releaseDateElement.innerHTML = '<i class="fa-solid fa-calendar-days"></i> ';
 
-    if (new Date(game.releaseDate) <= new Date()) releaseDateElement.innerHTML += language == "ru" ? 'Дата выхода: ' : 'Release date: ';
-    else releaseDateElement.innerHTML += language == "ru" ? 'Планируемая дата выхода: ' : 'Planned release date: ';
+    if (new Date(game.releaseDate) <= new Date()) releaseDateElement.innerHTML += RU ? 'Дата выхода: ' : 'Release date: ';
+    else releaseDateElement.innerHTML += RU ? 'Планируемая дата выхода: ' : 'Planned release date: ';
     releaseDateElement.innerHTML += game.releaseDate;
     
     var developersElement = document.createElement('h1');
     developersElement.classList.add('game-developers');
-    developersElement.innerHTML = language == "ru" ? "Разработчик: " : "Developers: ";
+    developersElement.innerHTML = RU ? "Разработчик: " : "Developers: ";
     for (var i = 0; i < game.developers.length; i++) {
         var dev = document.createElement('a');
         dev.href = game.developers[i].link;
         var logo = document.createElement('img');
-        logo.src = game.developers[i].logoSrc;
+        logo.src = game.developers[i].logo;
         dev.appendChild(logo);
         dev.innerHTML += " " + game.developers[i].name;
         developersElement.appendChild(dev);
         if(i+1 < game.developers.length) developersElement.innerHTML += ", ";
     }
 
-    for (let i = 0; i < game.screenshots.length; i++) {
+    var banner = document.createElement('img');
+    banner.src = gameFolder + "images/" + "banner.jpg";
+    screenshotsElement.appendChild(banner);
+
+    for(let i = 1; i <= game.screenshotsCount; i++) {
+        var screenshotPath = gameFolder + "images/screenshot_" + (RU ? "ru_" : "en_") + i + ".jpg";
         var screenshot = document.createElement('img');
-        screenshot.src = game.screenshots[i] || '';
+        screenshot.src = screenshotPath;
         screenshotsElement.appendChild(screenshot);
     }
 
     screenshotsElement.scrollTop = 0;
 
     var description = document.createElement('div');
-    var descriptionFilePath = language == "ru" ? game.description.ru : game.description.en;
+    var descriptionFilePath = gameFolder + "description/" + (RU ? "ru.txt" : "en.txt");
     var xhr = new XMLHttpRequest();
     xhr.open('GET', descriptionFilePath, true);
     xhr.onreadystatechange = function() {
@@ -62,12 +72,15 @@ export function generateGamePageById(id, language){
     xhr.send();
     
     var systemRequirementsLabel = document.createElement('h2');
-    systemRequirementsLabel.innerHTML = language == "ru" ? "Системные требования" : "System requirements"
+    systemRequirementsLabel.innerHTML = RU ? "Системные требования" : "System requirements"
     systemRequirementsElement.appendChild(systemRequirementsLabel);
-    var systemRequirements = game.systemRequirements;
+    var request = new XMLHttpRequest();
+    request.open("GET", `${gameFolder}systemRequirements.json`, false);
+    request.send(null)
+    var systemRequirements = JSON.parse(request.responseText);
     var systemRequirementsTable = document.createElement('table');
     var systemRequirementsTableBody = document.createElement('tbody');
-    var systemRequirementsTableLabels = language == "ru" ? 
+    var systemRequirementsTableLabels = RU ? 
     ["Операционная система:", "Процессор:", "ОЗУ:", "Свободное место на диске:", "Разрешения:"] :
     ["OS:", "Processor:", "RAM", "Free disk space:", "Permissions:"];
     let ind = 0;
@@ -90,23 +103,31 @@ export function generateGamePageById(id, language){
     systemRequirementsTable.appendChild(systemRequirementsTableBody);
     systemRequirementsElement.appendChild(systemRequirementsTable);
 
-    var updateInfoLabel = document.createElement('h2');
-    updateInfoLabel.innerText = language == "ru" ? "Информация об обновлении" : "Changelog";
-    updateInfoElement.appendChild(updateInfoLabel);
-    var updateInfoList = document.createElement('ul');
-    updateInfoElement.appendChild(updateInfoList);
-    var updateInfo = language == "ru" ? game.updateInfo.ru : game.updateInfo.en;
-    updateInfo.forEach(info=> {
-        var listItem = document.createElement('li');
-        listItem.textContent = info;
-        updateInfoList.appendChild(listItem);
-    })
+    var changelogLabel = document.createElement('h2');
+    changelogLabel.innerText = RU ? "Информация об обновлении" : "Changelog";
+    changelogElement.appendChild(changelogLabel);
+    var changelogList = document.createElement('ul');
+    changelogElement.appendChild(changelogList);
+    var changelogFilePath = gameFolder + "/changelog/" + (RU ? "ru.txt" : "en.txt");
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', changelogFilePath, true);
+    xhr.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var changelog = this.responseText.split('\n');
+            changelog.forEach(info=> {
+                var listItem = document.createElement('li');
+                listItem.textContent = info;
+                changelogList.appendChild(listItem);
+            })
+        }
+    }
+    xhr.send();
 
     for (let i = 0; i < game.downloadLink.length; i++) {
         var downloadLink = document.createElement('a');
         downloadLink.classList.add('game-buy-btn');
         downloadLink.href = game.downloadLink[i].link;
-        downloadLink.innerHTML = language == "ru" ? "Скачать для " : "Download for ";
+        downloadLink.innerHTML = RU ? "Скачать для " : "Download for ";
         downloadLink.innerHTML += game.downloadLink[i].platform;
         downloadElement.appendChild(downloadLink);
     }

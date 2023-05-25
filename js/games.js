@@ -1,67 +1,46 @@
+const ENGINES = {
+  UNITY: '<i class="fa-brands fa-unity" title="Unity"></i>',
+  UNREAL: '<svg id="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Unreal Engine</title><path d="M12 0a12 12 0 1012 12A12 12 0 0012 0zm0 23.52A11.52 11.52 0 1123.52 12 11.52 11.52 0 0112 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 01-5.804-2.978 2.859 2.859 0 00.65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 00-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 012.528-5.597 7.408 7.408 0 013.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 00.148.256 1.075 1.075 0 00.88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 01.387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z" fill="white"></path></svg>'
+}
+
+const DEVS = {
+  Enjine: {
+    logo: '../images/EnjineLogo.svg',
+    name: 'Enjine',
+    link: 'home'
+  },
+  DRAGOLITE: {
+    logo: '../images/DragoliteLogo.png',
+    name: 'DRAGOLITE Studio',
+    link: 'https://www.youtube.com/channel/UCR1aZu1OfksYFLQGkwkcNSQ'
+  },
+  NVW: {
+    logo: '../images/NVW.png',
+    name: 'NVW Game Development',
+    link: 'https://t.me/nvw_game_dev'
+  }
+}
+
+const STATUS = {
+  DEV: {en: 'in development', ru: 'в разработке'},
+  ALPHA: {en: 'alpha', ru: 'альфа'},
+  BETA: {en: 'beta', ru: 'бета'},
+  PRE: {en: 'pre release', ru: 'пре-релиз'},
+  RELEASE: {en: 'release', 'ru': 'релиз'}
+}
+
 const games = [
     {
       title: 'Offroaded',
-      engine: '<i class="fa-brands fa-unity"></i>',
-      developers: 
-      [
-        {
-          logoSrc: '../images/EnjineLogo.svg',
-          name: 'Enjine',
-          link: 'home'
-        },
-        {
-          logoSrc: '../images/DragoliteLogo.png',
-          name: 'DRAGOLITE Studio',
-          link: 'https://www.youtube.com/channel/UCR1aZu1OfksYFLQGkwkcNSQ'
-        }
-      ],
-      description:{
-        ru: '../games/offroaded/data/description_ru.txt',
-        en: '../games/offroaded/data/description_en.txt',
-      },
-      updateInfo:{
-        ru: [
-          'Исправлен баг с сохранением выбранной локализации.',
-          'Полная локализация на русский язык.',
-          'Добавлено уведомление об обновлении.'
-        ],
-        en: [
-          'Fixed bug with saving selected localization.',
-          'Full localization into Russian.',
-          'Added update notification.'
-        ]
-      },
-      systemRequirements:[
-        ["Android 5.0 Lollipop", "Windows 7"],
-        ["ARM7 / ARM64", "x64"],
-        ["1Gb", "1Gb"],
-        ["200mb", "200mb"],
-        ["Gallery"]
-      ],
-      screenshots:[
-        '../images/preview/offroaded-preview-full.png',
-        '../images/games/offroaded/screenshot_1.jpg',
-        '../images/games/offroaded/screenshot_5.jpg',
-        '../images/games/offroaded/screenshot_6.jpg',
-        '../images/games/offroaded/screenshot_7.jpg',
-        '../images/games/offroaded/screenshot_8.jpg',
-        '../images/games/offroaded/screenshot_9.jpg'
-      ],
+      name: 'offroaded',
+      engine: ENGINES.UNITY,
+      developers:[ DEVS.Enjine, DEVS.DRAGOLITE ],
+      screenshotsCount: 6,
       releaseDate: '<i class="fa-solid fa-infinity"></i>',
-      status: {
-        ru: 'БЕТА',
-        en: 'BETA'
-      },
+      status: STATUS.BETA,
       version: '0.1.3 beta',
-      info: {
-        ru: 'Бета доступна для скачивания',
-        en: 'Beta is available for download'
-      },
-      image: '../images/preview/offroaded-preview.png',
-      link: {
-        ru: '../ru/offroaded',
-        en: '../en/offroaded'
-      },
+      preview: '../images/preview/offroaded-preview.png',
+      link: '../offroaded',
       downloadLink: [
         {
           link: '../games/offroaded/download/offroaded_v0.1.3beta.apk',
@@ -75,62 +54,17 @@ const games = [
     },  
     {
       title: '5opka Game',
-      engine: '<i class="fa-brands fa-unity"></i>',
-      developers: [],
-      description:{},
-      updateInfo: {},
-      systemRequirements: [],
-      screenshots:[],
+      name: 'pyaterokagame',
+      engine: ENGINES.UNITY,
+      developers: [ DEVS.Enjine, DEVS.NVW ],
+      screenshotsCount: 0,
       releaseDate: '<i class="fa-solid fa-infinity"></i>',
-      status: {
-        ru: 'в разработке',
-        en: 'in development'
-      },
+      status: STATUS.DEV,
       version:'',
-      info: {},
-      image: '../images/preview/5opka-preview.jpg',
-      link: {},
+      preview: '../images/preview/5opka-preview.jpg',
+      link: '',
       downloadLink: []
     }
   ];
-
-  // {
-  //   title: '',
-  //   engine: '',
-  //   developers: 
-  //   [
-  //     {
-  //       logoSrc: '',
-  //       name: '',
-  //       link: ''
-  //     }
-  //   ],
-  //   description:{
-  //     ru: '',
-  //     en: '',
-  //   },
-  //   screenshots:[],
-  //   releaseDate: '',
-  //   status: {
-  //     ru: '',
-  //     en: ''
-  //   },
-  //   version: '',
-  //   info: {
-  //     ru: '',
-  //     en: ''
-  //   },
-  //   image: '',
-  //   link: {
-  //     ru: '',
-  //     en: ''
-  //   },
-  //   downloadLink: [
-  //     {
-  //       link: '',
-  //       platform: ''
-  //     }
-  //   ]
-  // }
 
   export default games;

@@ -1,0 +1,3 @@
+Fixed bug with saving selected localization.
+Full localization into Russian.
+Added update notification.

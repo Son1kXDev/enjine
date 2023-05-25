@@ -29,6 +29,10 @@
     animation: games-list-item-anim 0.75s ease-in-out forwards;
   }
   
+  #games-list li.downloadable {
+    cursor: pointer;
+  }
+
   #games-list .genre {
     font-size: 14px;
     text-transform: uppercase;

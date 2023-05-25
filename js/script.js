@@ -1,4 +1,8 @@
-import games from '../js/games.js';
+import games from './games.js';
+
+var url = window.location.href;
+const language = url.includes('ru') ? 'ru' : 'en';
+const RU = language == "ru";
 
 function generateGamesList() {
   const gamesList = document.getElementById('games-list');
@@ -7,19 +11,21 @@ function generateGamesList() {
   games.forEach(game => {
     const li = document.createElement('li');
 
-    if(game.link.en != undefined){
-      const gameLink = document.createElement('a');
-      gameLink.href = game.link.en;
-      li.addEventListener('click', () => {
-        gameLink.click();
-      });
-      } 
-      
+    if(game.link != '') {
+    const gameLink = document.createElement('a');
+    var link = game.link.replace('../', '../' + language + '/');
+    gameLink.href = link;
+    li.addEventListener('click', () => {
+      gameLink.click();
+    });
+    li.classList.add('downloadable');
+    } 
+
     const imgEl = document.createElement('img');
-    imgEl.src = game.image || '';
+    imgEl.src = game.preview || '';
     imgEl.alt = game.title;
     li.appendChild(imgEl);
-    
+
     const titleContainer = document.createElement('div');
     titleContainer.classList.add('title-container');
     li.appendChild(titleContainer);
@@ -30,27 +36,18 @@ function generateGamesList() {
 
     const statusEl = document.createElement('span');
     statusEl.classList.add('status');
-    statusEl.innerHTML = game.status.en;
+    statusEl.innerHTML = RU ? game.status.ru : game.status.en;
     titleContainer.appendChild(statusEl);
 
 	  const releaseDateEl = document.createElement('p');
 	  releaseDateEl.classList.add('release-date');
-	  if (new Date(game.releaseDate) <= new Date()) {
-		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Release date: ${game.releaseDate}`;
-	  } else {
-		  releaseDateEl.innerHTML = `<i class="fa-solid fa-calendar-days"></i> Planned release date: ${game.releaseDate}`;
-	  }
+    var calendarLogo = '<i class="fa-solid fa-calendar-days"></i> ';
+    releaseDateEl.innerHTML = calendarLogo + (new Date(game.releaseDate) <= new Date() ? 
+    RU ? 'Дата выхода: ' : 'Release date: ' : RU ? 'Планируемая дата выхода: ' : 'Planned release date: ') + game.releaseDate;
 	  li.appendChild(releaseDateEl);
-	  
-    if(game.info.en) {
-      const infoEl = document.createElement('info');
-      infoEl.classList.add('verison');
-      infoEl.innerText = `${game.info.en}`;
-      li.appendChild(infoEl);
-      }
-
     gamesList.appendChild(li);
   });
 }
 
 generateGamesList();
+

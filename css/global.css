@@ -56,6 +56,13 @@ h3 {
   text-align: center;
 }
 
+#icon {
+  vertical-align: top;
+  margin-top: 1px;
+  margin-right: -3px;
+  height: 1em;
+}
+
 /* Media */
 
 @media (max-width: 600px) {
