@@ -38,16 +38,16 @@ const games = [
       screenshotsCount: 6,
       releaseDate: '<i class="fa-solid fa-infinity"></i>',
       status: STATUS.BETA,
-      version: '0.1.3 beta',
+      version: '0.1.4 beta',
       preview: '../images/preview/offroaded-preview.png',
       link: '../offroaded',
       downloadLink: [
         {
-          link: '../games/offroaded/download/offroaded_v0.1.3beta.apk',
+          link: '../games/offroaded/download/offroaded_v0.1.4beta.apk',
           platform: 'Android'
         },
         {
-          link: '../games/offroaded/download/Offroaded Beta 0.1.3.exe',
+          link: '../games/offroaded/download/Offroaded Beta 0.1.4.exe',
           platform: 'Windows'
         }
       ]

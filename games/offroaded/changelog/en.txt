@@ -1,3 +1,4 @@
-Fixed bug with saving selected localization.
-Full localization into Russian.
-Added update notification.
+Fixed FPS bug.
+Fixed visual bug with gear lever.
+Added pause menu.
+Brand new user interface for popups.
