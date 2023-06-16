@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error 404 - Page Not Found</title>
+  <script>
+    function getLanguage() {
+      var language = navigator.language || navigator.userLanguage;
+      return language;
+    }
+
+    function redirectToLocalized404() {
+      var language = getLanguage();
+
+      console.log(language);
+
+      var languageCodes = {
+        'en-EN': 'en/404',
+        'ru-RU': 'ru/404'
+      };
+
+      var page404 = languageCodes[language] || 'en/404';
+
+      window.location.href = page404;
+    }
+  </script>
+</head>
+<body>
+  <script>
+    redirectToLocalized404();
+  </script>
+</body>
+</html>

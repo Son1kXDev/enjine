@@ -1,0 +1,49 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans-serif);
+    background: rgb(40, 32, 32);
+    background: linear-gradient(5deg, #350303, #ad0707);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    color: var(--text-color);
+  }
+    
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 00% 50%;
+    }
+  }
+
+  h1 {
+    font-size: 48px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  a{
+    color: white;
+    font-style: bold;
+  }
