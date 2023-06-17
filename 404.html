@@ -3,24 +3,11 @@
 <head>
   <title>Error 404 - Page Not Found</title>
   <script>
-    function getLanguage() {
-      var language = navigator.language || navigator.userLanguage;
-      return language;
-    }
-
     function redirectToLocalized404() {
-      var language = getLanguage();
-
-      console.log(language);
-
-      var languageCodes = {
-        'en-EN': 'en/404',
-        'ru-RU': 'ru/404'
-      };
-
-      var page404 = languageCodes[language] || 'en/404';
-
-      window.location.href = page404;
+      var userLang = navigator.language || navigator.userLanguage;
+      var url = '404';
+      url = (userLang.indexOf('ru') === 0 ? '/ru/' : '/en/') + url.split('/').pop();
+      window.location.replace(url);
     }
   </script>
 </head>

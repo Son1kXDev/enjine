@@ -7,7 +7,6 @@
 body {
   margin: 0;
   font-family: var(--font-sans-serif);
-  background: rgb(33,32,40);
   background: linear-gradient(135deg, #8e2de2, #4a00e0);
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;

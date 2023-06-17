@@ -9,7 +9,7 @@
   body {
     margin: 0;
     font-family: var(--font-sans-serif);
-    background: rgb(40, 32, 32);
+    background: #40092b;
     overflow: hidden;
     background: linear-gradient(5deg, #84092b, #40092b);
     background-size: 400% 400%;
