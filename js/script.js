@@ -42,7 +42,12 @@ function generateGamesList() {
 	  const releaseDateEl = document.createElement('p');
 	  releaseDateEl.classList.add('release-date');
     var calendarLogo = '<i class="fa-solid fa-calendar-days"></i> ';
-    releaseDateEl.innerHTML = calendarLogo + (new Date(game.releaseDate) <= new Date() ? 
+    var releaseDateParts = game.releaseDate.split('.');
+    var day = parseInt(releaseDateParts[0], 10);
+    var month = parseInt(releaseDateParts[1], 10) - 1;
+    var year = parseInt(releaseDateParts[2], 10);
+    var releaseDate = new Date(year, month, day);
+    releaseDateEl.innerHTML = calendarLogo + (releaseDate <= new Date() ? 
     RU ? 'Дата выхода: ' : 'Release date: ' : RU ? 'Планируемая дата выхода: ' : 'Planned release date: ') + game.releaseDate;
 	  li.appendChild(releaseDateEl);
     gamesList.appendChild(li);

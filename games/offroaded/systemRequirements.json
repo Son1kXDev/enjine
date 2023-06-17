@@ -1,7 +1,8 @@
 [
     ["Android 5.0 Lollipop", "Windows 7"],
     ["ARM7 / ARM64", "x64" ],
+    ["integrated ", "integrated" ],
     ["1GB", "1GB"],
     ["200mb", "200mb"],
-    ["Gallery"]
+    ["Gallery access"]
 ]

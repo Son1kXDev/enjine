@@ -29,7 +29,12 @@ export function generateGamePageById(id){
     releaseDateElement.classList.add('game-release-date');
     releaseDateElement.innerHTML = '<i class="fa-solid fa-calendar-days"></i> ';
 
-    if (new Date(game.releaseDate) <= new Date()) releaseDateElement.innerHTML += RU ? 'Дата выхода: ' : 'Release date: ';
+    var releaseDateParts = game.releaseDate.split('.');
+    var day = parseInt(releaseDateParts[0], 10);
+    var month = parseInt(releaseDateParts[1], 10) - 1;
+    var year = parseInt(releaseDateParts[2], 10);
+    var releaseDate = new Date(year, month, day);
+    if (releaseDate <= new Date()) releaseDateElement.innerHTML += RU ? 'Дата выхода: ' : 'Release date: ';
     else releaseDateElement.innerHTML += RU ? 'Планируемая дата выхода: ' : 'Planned release date: ';
     releaseDateElement.innerHTML += game.releaseDate;
     
@@ -81,8 +86,8 @@ export function generateGamePageById(id){
     var systemRequirementsTable = document.createElement('table');
     var systemRequirementsTableBody = document.createElement('tbody');
     var systemRequirementsTableLabels = RU ? 
-    ["Операционная система:", "Процессор:", "ОЗУ:", "Свободное место на диске:", "Разрешения:"] :
-    ["OS:", "Processor:", "RAM", "Free disk space:", "Permissions:"];
+    ["Операционная система:", "Процессор:", "Видеокарта:", "ОЗУ:", "Свободное место на диске:", "Дополнительно:"] :
+    ["OS:", "Processor:", "Graphics card", "RAM", "Free disk space:", "Other:"];
     let ind = 0;
     systemRequirements.forEach(rowData => {
         var row = document.createElement('tr');
@@ -103,22 +108,24 @@ export function generateGamePageById(id){
     systemRequirementsTable.appendChild(systemRequirementsTableBody);
     systemRequirementsElement.appendChild(systemRequirementsTable);
 
-    var changelogLabel = document.createElement('h2');
-    changelogLabel.innerText = RU ? "Информация об обновлении" : "Changelog";
-    changelogElement.appendChild(changelogLabel);
-    var changelogList = document.createElement('ul');
-    changelogElement.appendChild(changelogList);
     var changelogFilePath = gameFolder + "/changelog/" + (RU ? "ru.txt" : "en.txt");
     var xhr = new XMLHttpRequest();
     xhr.open('GET', changelogFilePath, true);
     xhr.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
+            var changelogLabel = document.createElement('h2');
+            changelogLabel.innerText = RU ? "Информация об обновлении" : "Changelog";
+            changelogElement.appendChild(changelogLabel);
+            var changelogList = document.createElement('ul');
+            changelogElement.appendChild(changelogList);
             var changelog = this.responseText.split('\n');
             changelog.forEach(info=> {
                 var listItem = document.createElement('li');
                 listItem.textContent = info;
                 changelogList.appendChild(listItem);
             })
+        } else {
+            console.log('changelog file not found');
         }
     }
     xhr.send();

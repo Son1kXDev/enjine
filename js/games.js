@@ -63,17 +63,20 @@ const games = [
       link: '',
       downloadLink: []
     },
-    { title: 'Simulator of a information network specialist in VR',
+    { title: 'Simulator of a information network specialist',
       name: 'vrsimulator',
       engine: ENGINES.UNITY,
       developers: [ DEVS.Enjine ],
-      screenshotsCount: 0,
-      releaseDate: '18.06.2023',
-      status: STATUS.PRE,
-      version:'',
+      screenshotsCount: 11,
+      releaseDate: '17.06.2023',
+      status: STATUS.RELEASE,
+      version:'1.0',
       preview: '../images/preview/vrsimulator-preview.jpg',
-      link: '',
-      downloadLink: []
+      link: '../vrsimulator',
+      downloadLink: [{
+        link: 'https://github.com/Son1kXDev/enjine/releases/download/game/Simulator.Installer.exe',
+        platform: 'Windows'
+      }]
     }
   ];
 
