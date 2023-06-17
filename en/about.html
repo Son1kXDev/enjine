@@ -9,11 +9,28 @@
   <link rel="stylesheet" href="../css/social.css">
   <link rel="stylesheet" href="../css/form.css">
   <link rel="stylesheet" href="../css/discord.css">
+  <link rel="stylesheet" href="../css/loader.css">
   <script src="https://kit.fontawesome.com/1d8eb1b313.js" crossorigin="anonymous"></script>
   <script src="../js/language.js"></script>
   <link rel="icon" href="../images/EnjineLogo.svg">
 </head>
 <body>
+
+    <!-- LOADER -->
+    <div id="loader" class="loader">
+      <svg class="circle-loader" viewBox="25 25 50 50">
+        <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
+    </div>
+    <script>
+      window.addEventListener('load', function() {
+        var loader = document.getElementById('loader');
+        setTimeout(function() {
+          loader.classList.add('hidden');
+        }, 250);
+      });
+    </script>
+
   <nav>
     <a href="home"><img src="../images/EnjineFullLogo.png" alt="Enjine"></a>
     <ul>
