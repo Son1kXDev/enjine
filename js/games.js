@@ -26,12 +26,11 @@ const STATUS = {
   ALPHA: {en: 'alpha', ru: 'альфа'},
   BETA: {en: 'beta', ru: 'бета'},
   PRE: {en: 'pre release', ru: 'пре-релиз'},
-  RELEASE: {en: 'release', 'ru': 'релиз'}
+  RELEASE: {en: 'release', ru: 'релиз'}
 }
 
 const games = [
-    {
-      title: 'Offroaded',
+    { title: 'Offroaded',
       name: 'offroaded',
       engine: ENGINES.UNITY,
       developers:[ DEVS.Enjine, DEVS.DRAGOLITE ],
@@ -52,8 +51,7 @@ const games = [
         }
       ]
     },  
-    {
-      title: '5opka Game',
+    { title: '5opka Game',
       name: 'pyaterokagame',
       engine: ENGINES.UNITY,
       developers: [ DEVS.Enjine, DEVS.NVW ],
@@ -62,6 +60,18 @@ const games = [
       status: STATUS.DEV,
       version:'',
       preview: '../images/preview/5opka-preview.jpg',
+      link: '',
+      downloadLink: []
+    },
+    { title: 'Simulator of a information network specialist in VR',
+      name: 'vrsimulator',
+      engine: ENGINES.UNITY,
+      developers: [ DEVS.Enjine ],
+      screenshotsCount: 0,
+      releaseDate: '18.06.2023',
+      status: STATUS.PRE,
+      version:'',
+      preview: '../images/preview/vrsimulator-preview.jpg',
       link: '',
       downloadLink: []
     }
