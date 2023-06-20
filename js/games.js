@@ -52,15 +52,15 @@ const games = [
       ]
     },  
     { title: '5opka Game',
-      name: 'pyaterokagame',
+      name: 'pyaterka',
       engine: ENGINES.UNITY,
       developers: [ DEVS.Enjine, DEVS.NVW ],
-      screenshotsCount: 0,
+      screenshotsCount: 1,
       releaseDate: '<i class="fa-solid fa-infinity"></i>',
       status: STATUS.DEV,
       version:'',
       preview: '../images/preview/5opka-preview.jpg',
-      link: '',
+      link: '../pyaterka',
       downloadLink: []
     },
     { title: 'Simulator of a information network specialist',

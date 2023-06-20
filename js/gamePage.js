@@ -20,10 +20,13 @@ export function generateGamePageById(id){
     titleElement.classList.add('game-title');
     titleElement.innerHTML = game.engine + " " + game.title;
 
+    
     var versionElement = document.createElement('h1');
     versionElement.classList.add('game-subtitle');
-    versionElement.innerHTML = RU ? "Версия: " : "Version: ";
-    versionElement.innerHTML += game.version;
+    if(game.version != '') {
+        versionElement.innerHTML = RU ? "Версия: " : "Version: ";
+        versionElement.innerHTML += game.version;
+    }
 
     var releaseDateElement = document.createElement('h1');
     releaseDateElement.classList.add('game-release-date');

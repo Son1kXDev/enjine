@@ -1,9 +1,9 @@
 @import url("root.css");
-  
-*{
+
+* {
   box-sizing: border-box;
 }
-  
+
 body {
   margin: 0;
   font-family: var(--font-sans-serif);
@@ -12,25 +12,27 @@ body {
   animation: gradient 5s ease infinite;
   color: var(--text-color);
 }
-  
+
 @keyframes gradient {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--text-color);
   text-align: center;
   margin-top: 0px;
 }
-  
+
 h3 {
   font-size: 20px;
 }
@@ -39,18 +41,18 @@ h3 {
   max-width: 1800px;
   z-index: 1;
 }
-    
+
 #main-about {
   display: block;
   max-width: 800px;
   margin: 0 auto;
-   z-index: 1;
+  z-index: 1;
 }
-    
+
 #main-about a {
-   color: var(--text-color);
+  color: var(--text-color);
 }
-    
+
 #text-center {
   text-align: center;
 }
@@ -65,61 +67,121 @@ h3 {
 /* Media */
 
 @media (max-width: 600px) {
- 
-    #main-about{
+  #main-about {
     display: block;
     max-width: 600px;
     margin: 0 auto;
-    }
-        
-    #main-about h2{
+  }
+
+  #main-about h2 {
     font-size: 1.8rem;
-    }
-        
-    #main-about p{
+  }
+
+  #main-about p {
     font-size: 1.2rem;
-    }
+  }
 }
 
 @media (min-width: 1200px) {
-    #main-about{
+  #main-about {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    }
+  }
 }
 
 @media screen and (max-width: 1200px) {
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    header h1 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    header nav {
-      margin-bottom: 1rem;
-    }
-    
-    main {
-      padding: 1rem;
-      /* max-width: 800px; */
-      text-align: center;
-    }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  header nav {
+    margin-bottom: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+    /* max-width: 800px; */
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 580px) {
   header h1 {
     font-size: 1.2rem;
   }
-  
+
   main {
     padding: 1rem;
     /* max-width: 800px; */
     text-align: center;
   }
+}
+
+/* Additional styles for about page */
+
+.company-description {
+  margin-bottom: 20px;
+}
+
+.contact-heading {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  margin-bottom: 10px;
+}
+
+.contact-form button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a00e0;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #35008b;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.social-links {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--text-color);
+}
+
+.social-links a:hover {
+  color: #4a00e0;
 }

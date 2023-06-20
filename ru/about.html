@@ -16,20 +16,20 @@
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div id="loader" class="loader">
-    <svg class="circle-loader" viewBox="25 25 50 50">
-      <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-    </svg>
-  </div>
-  <script>
-    window.addEventListener('load', function() {
-      var loader = document.getElementById('loader');
-      setTimeout(function() {
-        loader.classList.add('hidden');
-      }, 250);
-    });
-  </script>
+    <!-- LOADER -->
+    <div id="loader" class="loader">
+      <svg class="circle-loader" viewBox="25 25 50 50">
+        <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
+    </div>
+    <script>
+      window.addEventListener('load', function() {
+        var loader = document.getElementById('loader');
+        setTimeout(function() {
+          loader.classList.add('hidden');
+        }, 250);
+      });
+    </script>
 
   <nav>
     <a href="home"><img src="../images/EnjineFullLogo.png" alt="Enjine"></a>
@@ -40,47 +40,45 @@
     </ul>
   </nav>
   <main id="main-about">
-    <h1>Об Enjine</h1>
-    <p><strong>Добро пожаловать в Enjine</strong> - страницу-портфолио инди-разработчика! 
-      На сегодняшний день моей специализацией является создание игр на <em>Unity3D</em>.</p>
-    <p>Сейчас я работаю над двумя увлекательными проектами: 
-      <a>«<strong>5opka Game</strong>»</a> для Windows, которая повествует фантастическую историю, 
-      основанную на популярном стримере по видеоигре Minecraft, 
-      и <a href="../ru/offroaded">«<strong>Offroaded</strong>»</a> - игрой в стиле <em>Hill Climb Racing</em> для Android, 
-      с улучшенной и проработанной физикой машин и инструментами тюнинга и покраски.</p>
-    <p>В первую очередь я создаю игры, в которые мне самому будет интересно играть. 
-      Я открыт к любым предложениям поделиться знаниями и опытом, чтобы помочь создать лучшие игры, 
-      и вместе сделать игровую индустрию еще более интересной и захватывающей.</p>
-    <h2>Связь со мной <i class="fa-solid fa-pen-to-square"></i></h2>
-	<form
-	action="https://formspree.io/f/xqkoynrz"
-	method="POST"
-	>
-		<label>
-			<i class="fa-solid fa-at"></i> Ваш email:
-			<input type="email" name="email">
-		</label>
-		<label>
-			<i class="fa-solid fa-envelope"></i> Ваше сообщение:
-			<textarea name="message"></textarea>
-		</label>
-		<button type="submit" id="text-center">Отправить</i></i></button>
-	</form>
-  <div class="discord-widget">
-    <button id="discord-close-btn" class="discord-close-btn">&times;</button>
-    <iframe src="https://discord.com/widget?id=483959267897114624&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-  </div>
-  <div id="follow-us">
-    <ul id="social-links">
-      <li><a href="https://vk.com/son1kx"><i class="fa-brands fa-vk"> vk</i></a></li>
-      <li><a href="https://t.me/son1kxpublic"><i class="fa-brands fa-telegram"> Telegram</i></a></li>
-      <li><a href="mailto:son1kx@vk.com?subject="><i class="fa-solid fa-envelope"> Email</i></a></li>
-      <li><a href="https://youtube.com/son1kx"><i class="fa-brands fa-youtube"> YouTube</i></a></li>
-      <li><a href="https://github.com/Son1kXDev"><i class="fa-brands fa-github"> GitHub</i></a></li>
-      <li><button id="discord"><i class="fa-brands fa-discord"> Discord</i></button></li>
+    <h1>О Компании Enjine</h1>
+    <p class="company-description">Добро пожаловать в мир Enjine - независимого разработчика игр!</p>
+    <p class="company-description">Мы специализируемся на создании игр с использованием Unity3D.</p>
+    <p class="company-description">В нашем портфолио сейчас три захватывающих проекта:</p>
+    <ul class="projects-list">
+      <li><a href="../pyaterka">«5opka Game»</a> - фантастическая история, основанная на популярном стримере по видеоигре Minecraft.</li>
+      <li><a href="../vrsimulator">«Simulator of a information network specialist»</a> - симулятор виртуальной реальности, позволяющий попробовать себя в роли специалиста по информационным кабельным сетям.</li>
+      <li><a href="../offroaded">«Offroaded»</a> - игра в стиле Hill Climb Racing для Android с улучшенной физикой машин и инструментами тюнинга и покраски.</li>
     </ul>
-    <p id="copyright"><i class="fa-regular fa-copyright"></i> 2023 <img src="../images/EnjineTextLogo.svg" alt="Enjine">. Все права защищены.</p>
-  </div>  
+    <p class="company-description">Мы стремимся создавать игры, которые нам самих будет интересно играть.</p>
+    <p class="company-description">Мы открыты для сотрудничества и готовы делиться своими знаниями и опытом, чтобы помочь создать лучшие игры и сделать игровую индустрию еще более захватывающей.</p>
+    <h2 class="contact-heading">Свяжитесь с нами</h2>
+    <form action="https://formspree.io/f/xqkoynrz" method="POST" class="contact-form">
+      <label>
+        <i class="fa-solid fa-at"></i> Ваш email:
+        <input type="email" name="email">
+      </label>
+      <label>
+        <i class="fa-solid fa-envelope"></i> Ваше сообщение:
+        <textarea name="message"></textarea>
+      </label>
+      <button type="submit" class="submit-button">Отправить</button>
+    </form>
+    <div class="discord-widget">
+      <button id="discord-close-btn" class="discord-close-btn">&times;</button>
+      <iframe src="https://discord.com/widget?id=483959267897114624&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
+    <div id="follow-us">
+      <ul id="social-links">
+        <li><a href="https://vk.com/son1kx"><i class="fa-brands fa-vk"> vk</i></a></li>
+        <li><a href="https://t.me/son1kxpublic"><i class="fa-brands fa-telegram"> Telegram</i></a></li>
+        <li><a href="mailto:son1kx@vk.com?subject="><i class="fa-solid fa-envelope"> Email</i></a></li>
+        <li><a href="https://youtube.com/son1kx"><i class="fa-brands fa-youtube"> YouTube</i></a></li>
+        <li><a href="https://github.com/Son1kXDev"><i class="fa-brands fa-github"> GitHub</i></a></li>
+        <li><button id="discord"><i class="fa-brands fa-discord"> Discord</i></button></li>
+      </ul>
+      <p id="copyright"><i class="fa-regular fa-copyright"></i> 2023 
+        <img src="../images/EnjineTextLogo.svg" alt="Enjine">. Все права защищены.</p>
+    </div>  
   <script src="../js/discord.js"></script>
   </main>
 </body>
