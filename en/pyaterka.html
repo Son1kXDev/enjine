@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, orientation=portrait">
   <title>Enjine - 5opka Game</title>
+  <link rel="preload" href="../loader.html" as="fetch">
+  <link rel="preload" href="../js/loader.js" as="script">
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/social.css">
@@ -17,29 +19,12 @@
 </head>
 <body>
   
-  <!-- LOADER -->
-  <div id="loader" class="loader">
-    <svg class="circle-loader" viewBox="25 25 50 50">
-      <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-    </svg>
-  </div>
-  <script>
-    window.addEventListener('load', function() {
-      var loader = document.getElementById('loader');
-      setTimeout(function() {
-        loader.classList.add('hidden');
-      }, 250);
-    });
-  </script>
+  <div id="loader-container"></div> 
+  <script src="../js/loader.js"></script>
 
-    <nav>
-        <a href="home"><img src="../images/EnjineFullLogo.png" alt="Enjine"></a>
-        <ul>
-          <li><a href="home">Home</a></li>
-          <li><a href="about">About</a></li>
-          <img src="../images/ru.png" alt="Russian" onclick="changeLanguage('ru')">
-        </ul>
-      </nav>
+  <div id="navigation"></div>
+  <script src="../js/navigation.js"></script>
+
 	<main>
 		<section class="game-header" id="header"></section>
 		<section class="game-banner" id="game-screenshots"></section>

@@ -130,7 +130,8 @@ color: var(--accent-color);
 }
 
 .game-buy-btn {
-    background-color: #e53935;
+    background: linear-gradient(to bottom, #e53935, #c62828);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-decoration: none;
     border: none;
     color: #fff;

@@ -1,0 +1,30 @@
+<nav>
+    <div class="left-nav">
+      <a href="home"><img src="../images/EnjineFullLogo.png" alt="Enjine"></a>
+      <img class="language-switch" src="../images/ru.png" alt="Russian" onclick="changeLanguage('ru')">
+    </div>
+    <ul>
+      <li><a class="nav-link" href="home" data-page="home">Home</a></li>
+      <li class="dropdown">
+        <a class="nav-link" href="#" data-page="projects">Projects</a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="offroaded" data-page="offroaded">Offroaded</a></li>
+          <li><a class="nav-link" href="pyaterka" data-page="pyaterka">5opka Game</a></li>
+          <li><a class="nav-link" href="vrsimulator" data-page="vrsimulator">VR Simulator</a></li>
+        </ul>
+      </li>
+      <li><a class="nav-link" href="about" data-page="about">About</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+      if (link.dataset.page === currentPage) {
+        link.classList.add('active-page');
+      }
+    });
+  </script>
+  

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, orientation=portrait">
   <title>Enjine - Инди-разработчик</title>
+  <link rel="preload" href="../loader.html" as="fetch">
+  <link rel="preload" href="../js/loader.js" as="script">
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/social.css">
@@ -17,29 +19,12 @@
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div id="loader" class="loader">
-    <svg class="circle-loader" viewBox="25 25 50 50">
-      <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-    </svg>
-  </div>
-  <script>
-    window.addEventListener('load', function() {
-      var loader = document.getElementById('loader');
-      setTimeout(function() {
-        loader.classList.add('hidden');
-      }, 250);
-    });
-  </script>
+  <div id="loader-container"></div> 
+  <script src="../js/loader.js"></script>
 
-<nav>
-  <a href="home"><img src="../images/EnjineFullLogo.png" alt="Enjine"></a>
-  <ul>
-    <li><a href="">Главная</a></li>
-    <li><a href="about">О Нас</a></li>
-    <img src="../images/en.png" alt="English" onclick="changeLanguage('en')">
-  </ul>
-</nav>
+  <div id="navigation"></div>
+  <script src="../js/navigation.js"></script>
+
   <main id="main-index">
     <h1>Встречайте Enjine!</h1>
     <h2>Наши игры</h2>
@@ -49,17 +34,10 @@
       <iframe src="https://discord.com/widget?id=483959267897114624&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
       <script src="../js/discord.js"></script>
   </div>
-  <div id="follow-us">
-      <ul id="social-links">
-        <li><a href="https://vk.com/son1kx"><i class="fa-brands fa-vk"> vk</i></a></li>
-        <li><a href="https://t.me/son1kxpublic"><i class="fa-brands fa-telegram"> Telegram</i></a></li>
-      <li><a href="mailto:son1kx@vk.com?subject="><i class="fa-solid fa-envelope"> Email</i></a></li>
-      <li><a href="https://youtube.com/son1kx"><i class="fa-brands fa-youtube"> YouTube</i></a></li>
-      <li><a href="https://github.com/Son1kXDev"><i class="fa-brands fa-github"> GitHub</i></a></li>
-      <li><button id="discord"><i class="fa-brands fa-discord"> Discord</i></button></li>
-    </ul>
-      <p id="copyright"><i class="fa-regular fa-copyright"></i> 2023 <img src="../images/EnjineTextLogo.svg" alt="Enjine">. Все права защищены.</p>
-    </div> 
+
+  <div id="follow-us"></div> 
+  <script src="../js/follow-us.js"></script>
+
   </main>
 </body>
 </html>

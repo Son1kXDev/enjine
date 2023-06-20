@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  font-size: 16px;
   font-family: var(--font-sans-serif);
   background: linear-gradient(135deg, #8e2de2, #4a00e0);
   background-size: 400% 400%;
@@ -33,17 +34,29 @@ h3 {
   margin-top: 0px;
 }
 
+h1 {
+  font-size: 2.618em;
+}
+
+h2 {
+  font-size: 1.618em;
+}
+
 h3 {
-  font-size: 20px;
+  font-size: 1em;
+}
+
+main {
+  display: none;
 }
 
 #main-index {
-  max-width: 1800px;
   z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 #main-about {
-  display: block;
   max-width: 800px;
   margin: 0 auto;
   z-index: 1;
@@ -68,7 +81,6 @@ h3 {
 
 @media (max-width: 600px) {
   #main-about {
-    display: block;
     max-width: 600px;
     margin: 0 auto;
   }
@@ -78,7 +90,7 @@ h3 {
   }
 
   #main-about p {
-    font-size: 1.2rem;
+    font-size: 1.382em;
   }
 }
 
