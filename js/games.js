@@ -35,7 +35,7 @@ const games = [
       engine: ENGINES.UNITY,
       developers:[ DEVS.Enjine, DEVS.DRAGOLITE ],
       screenshotsCount: 6,
-      releaseDate: '<i class="fa-solid fa-infinity"></i>',
+      releaseDate: '2023',
       status: STATUS.BETA,
       version: '0.1.4 beta',
       preview: '../images/preview/offroaded-preview.png',
