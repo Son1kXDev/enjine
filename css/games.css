@@ -93,7 +93,7 @@
 #games-list h3 {
   font-size: 24px;
   font-weight: bold;
-  margin: 20px 0 10px;
+  padding-top: 20px;
   text-align: center;
 }
 
@@ -108,12 +108,15 @@
   transform: scale(1.05);
 }
 
+#games-list .title-container {
+  padding-bottom: 10px;
+}
+
 #games-list .release-date {
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 10px 0 5px;
-  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 #games-list .version {
@@ -126,7 +129,7 @@
 #games-list .status {
   font-size: 14px;
   text-transform: uppercase;
-  margin: 20px 0px 10px;
+  /* margin: 20px 0px 10px; */
   padding: 5px 10px;
   border-radius: 20px;
   background-color: var(--primary-color);

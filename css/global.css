@@ -75,6 +75,7 @@ main {
   max-width: 800px;
   margin: 0 auto;
   z-index: 1;
+  list-style-position: inside;
 }
 
 #main-about a {
