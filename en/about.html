@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, orientation=portrait">
@@ -14,60 +15,71 @@
   <link rel="stylesheet" href="../css/loader.css">
   <script src="https://kit.fontawesome.com/1d8eb1b313.js" crossorigin="anonymous"></script>
   <script src="../js/language.js"></script>
-  <link rel="icon" href="../images/EnjineLogo.svg">
+  <link rel="icon" href="../images/developers/EnjineLogo.svg">
 </head>
+
 <body>
 
-  <div id="loader-container"></div> 
+  <div id="loader-container"></div>
   <script src="../js/loader.js"></script>
 
   <div id="navigation"></div>
   <script src="../js/navigation.js"></script>
 
-  <main id="main-about">
-    <h1>About Enjine</h1>
-    <p class="company-description">Welcome to the world of Enjine - an independent game developer!</p>
-    <p class="company-description">We specialize in creating games using Unity3D.</p>
-    <p class="company-description">Currently, our portfolio includes three exciting projects:</p>
-    <ul class="projects-list">
-      <li><a href="../pyaterka">"5opka Game"</a> - a fantastic story based on a popular streamer in the Minecraft video game.</li>
-      <li><a href="../vrsimulator">"Simulator of an Information Network Specialist"</a> - a virtual reality simulator that allows you to experience the role of an information cable network specialist.</li>
-      <li><a href="../offroaded">"Offroaded"</a> - a Hill Climb Racing-style game for Android with improved car physics and tuning and painting tools.</li>
-    </ul>
-    <p class="company-description">We strive to create games that we ourselves enjoy playing.</p>
-    <p class="company-description">We are open to collaboration and ready to share our knowledge and experience to help create the best games and make the gaming industry even more exciting.</p>
-    <h2 class="contact-heading">Contact Us</h2>
-    <form action="https://formspree.io/f/xqkoynrz" method="POST" class="contact-form">
-      <label>
-        <i class="fa-solid fa-at"></i> Email:
-        <input type="email" name="email" required>
-      </label>
-      <label>
-        <i class="fa-solid fa-square-pen"></i> Subject:
-        <input name="subject" value="" required/>
-      </label>
-      <label>
-        <i class="fa-solid fa-envelope"></i> Message:
-        <textarea name="message" required></textarea>
-      </label>
-      <button type="submit" class="submit-button">Send</button>
-    </form>
-    <div class="discord-widget">
-      <button id="discord-close-btn" class="discord-close-btn">&times;</button>
-      <iframe src="https://discord.com/widget?id=483959267897114624&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  <main>
+    <div id="main-about">
+      <h1>About Enjine</h1>
+      <p class="company-description">Welcome to the world of Enjine - an independent game developer!</p>
+      <p class="company-description">We specialize in creating games using Unity3D.</p>
+      <p class="company-description">Currently, our portfolio includes three exciting projects:</p>
+      <ul class="projects-list">
+        <li><a href="../pyaterka">"5opka Game"</a> - a fantastic story based on a popular streamer in the Minecraft
+          video
+          game.</li>
+        <li><a href="../vrsimulator">"Simulator of an Information Network Specialist"</a> - a virtual reality simulator
+          that allows you to experience the role of an information cable network specialist.</li>
+        <li><a href="../offroaded">"Offroaded"</a> - a Hill Climb Racing-style game for Android with improved car
+          physics
+          and tuning and painting tools.</li>
+      </ul>
+      <p class="company-description">We strive to create games that we ourselves enjoy playing.</p>
+      <p class="company-description">We are open to collaboration and ready to share our knowledge and experience to
+        help
+        create the best games and make the gaming industry even more exciting.</p>
+      <h2 class="contact-heading">Contact Us</h2>
+      <form action="https://formspree.io/f/xqkoynrz" method="POST" class="contact-form">
+        <label>
+          <i class="fa-solid fa-at"></i> Email:
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          <i class="fa-solid fa-square-pen"></i> Subject:
+          <input name="subject" value="" required />
+        </label>
+        <label>
+          <i class="fa-solid fa-envelope"></i> Message:
+          <textarea name="message" required></textarea>
+        </label>
+        <button type="submit" class="submit-button">Send</button>
+      </form>
+
+      <!-- без этой хуйни iframe ломается загрузка после лоадера, так что он тут нужен -->
+      <iframe style="display: none" src="https://discord.com/widget?id=483959267897114624&theme=dark" width="0"
+        height="0"></iframe>
+
     </div>
 
-    <div id="follow-us"></div> 
-    <script src="../js/follow-us.js"></script> 
+    <div id="follow-us"></div>
+    <script src="../js/footer.js"></script>
 
-    <script src="../js/discord.js"></script>
     <script>
       window.onbeforeunload = () => {
-        for(const form of document.getElementsByTagName('form')) {
+        for (const form of document.getElementsByTagName('form')) {
           form.reset();
         }
       }
     </script>
   </main>
 </body>
+
 </html>

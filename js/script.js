@@ -11,18 +11,20 @@ function generateGamesList() {
   games.forEach(game => {
     const li = document.createElement('li');
 
-    if(game.link != '') {
-    const gameLink = document.createElement('a');
-    var link = game.link.replace('../', '../' + language + '/');
-    gameLink.href = link;
-    li.addEventListener('click', () => {
-      gameLink.click();
-    });
-    li.classList.add('downloadable');
-    } 
+    var gameFolder = "../games/" + game.name + "/";
+
+    if (game.name != '') {
+      const gameLink = document.createElement('a');
+      var link = '../' + language + '/' + game.name;
+      gameLink.href = link;
+      li.addEventListener('click', () => {
+        gameLink.click();
+      });
+      li.classList.add('downloadable');
+    }
 
     const imgEl = document.createElement('img');
-    imgEl.src = game.preview || '';
+    imgEl.src = gameFolder + "images/preview.jpg";
     imgEl.alt = game.title;
     li.appendChild(imgEl);
 
@@ -39,20 +41,23 @@ function generateGamesList() {
     statusEl.innerHTML = RU ? game.status.ru : game.status.en;
     titleContainer.appendChild(statusEl);
 
-	  const releaseDateEl = document.createElement('p');
-	  releaseDateEl.classList.add('release-date');
-    var calendarLogo = '<i class="fa-solid fa-calendar-days"></i> ';
-    var releaseDateParts = game.releaseDate.split('.');
-    var day = parseInt(releaseDateParts[0], 10);
-    var month = parseInt(releaseDateParts[1], 10) - 1;
-    var year = parseInt(releaseDateParts[2], 10);
-    var releaseDate = new Date(year, month, day);
-    releaseDateEl.innerHTML = calendarLogo + (releaseDate <= new Date() ? 
-    RU ? 'Дата выхода: ' : 'Release date: ' : RU ? 'Планируемая дата выхода: ' : 'Planned release date: ') + game.releaseDate;
-	  li.appendChild(releaseDateEl);
+    if (game.releaseDate != '') {
+      const releaseDateEl = document.createElement('p');
+      releaseDateEl.classList.add('release-date');
+      var calendarLogo = '<i class="fa-solid fa-calendar-days"></i> ';
+      var releaseDateParts = game.releaseDate.split('.');
+      var day = parseInt(releaseDateParts[0], 10);
+      var month = parseInt(releaseDateParts[1], 10) - 1;
+      var year = parseInt(releaseDateParts[2], 10);
+      var releaseDate = new Date(year, month, day);
+      releaseDateEl.innerHTML = calendarLogo + (releaseDate <= new Date() ?
+        RU ? 'Дата выхода: ' : 'Release date: ' : RU ? 'Планируемая дата выхода: ' : 'Planned release date: ') + game.releaseDate;
+      li.appendChild(releaseDateEl);
+    }
+
     gamesList.appendChild(li);
+
   });
 }
-
 generateGamesList();
 

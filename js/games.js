@@ -5,79 +5,76 @@ const ENGINES = {
 
 const DEVS = {
   Enjine: {
-    logo: '../images/EnjineLogo.svg',
+    logo: '../images/developers/EnjineLogo.svg',
     name: 'Enjine',
     link: 'home'
   },
   DRAGOLITE: {
-    logo: '../images/DragoliteLogo.png',
+    logo: '../images/developers/DragoliteLogo.png',
     name: 'DRAGOLITE Studio',
     link: 'https://www.youtube.com/channel/UCR1aZu1OfksYFLQGkwkcNSQ'
   },
   NVW: {
-    logo: '../images/NVW.png',
+    logo: '../images/developers/NVW.png',
     name: 'NVW Game Development',
     link: 'https://t.me/nvw_game_dev'
   }
 }
 
 const STATUS = {
-  DEV: {en: 'in development', ru: 'в разработке'},
-  ALPHA: {en: 'alpha', ru: 'альфа'},
-  BETA: {en: 'beta', ru: 'бета'},
-  PRE: {en: 'pre release', ru: 'пре-релиз'},
-  RELEASE: {en: 'release', ru: 'релиз'}
+  DEV: { en: 'in development', ru: 'в разработке' },
+  ALPHA: { en: 'alpha', ru: 'альфа' },
+  BETA: { en: 'beta', ru: 'бета' },
+  PRE: { en: 'pre release', ru: 'пре-релиз' },
+  RELEASE: { en: 'release', ru: 'релиз' }
 }
 
 const games = [
-    { title: 'Offroaded',
-      name: 'offroaded',
-      engine: ENGINES.UNITY,
-      developers:[ DEVS.Enjine, DEVS.DRAGOLITE ],
-      screenshotsCount: 6,
-      releaseDate: '2023',
-      status: STATUS.BETA,
-      version: '0.1.4 beta',
-      preview: '../images/preview/offroaded-preview.png',
-      link: '../offroaded',
-      downloadLink: [
-        {
-          link: '../games/offroaded/download/offroaded_v0.1.4beta.apk',
-          platform: 'Android'
-        },
-        {
-          link: '../games/offroaded/download/Offroaded Beta 0.1.4.exe',
-          platform: 'Windows'
-        }
-      ]
-    },  
-    { title: '5opka Game',
-      name: 'pyaterka',
-      engine: ENGINES.UNITY,
-      developers: [ DEVS.Enjine, DEVS.NVW ],
-      screenshotsCount: 1,
-      releaseDate: '<i class="fa-solid fa-infinity"></i>',
-      status: STATUS.DEV,
-      version:'',
-      preview: '../images/preview/5opka-preview.jpg',
-      link: '../pyaterka',
-      downloadLink: []
-    },
-    { title: 'Simulator of a information network specialist',
-      name: 'vrsimulator',
-      engine: ENGINES.UNITY,
-      developers: [ DEVS.Enjine ],
-      screenshotsCount: 11,
-      releaseDate: '17.06.2023',
-      status: STATUS.RELEASE,
-      version:'1.0',
-      preview: '../images/preview/vrsimulator-preview.jpg',
-      link: '../vrsimulator',
-      downloadLink: [{
-        link: 'https://github.com/Son1kXDev/enjine/releases/download/game/Simulator.Installer.exe',
+  {
+    title: 'Offroaded',
+    name: 'offroaded',
+    engine: ENGINES.UNITY,
+    developers: [DEVS.Enjine, DEVS.DRAGOLITE],
+    screenshotsCount: 6,
+    releaseDate: '2023',
+    status: STATUS.BETA,
+    version: '0.1.4 beta',
+    downloadLink: [
+      {
+        link: '../games/offroaded/download/offroaded_v0.1.4beta.apk',
+        platform: 'Android'
+      },
+      {
+        link: '../games/offroaded/download/Offroaded Beta 0.1.4.exe',
         platform: 'Windows'
-      }]
-    }
-  ];
+      }
+    ]
+  },
+  {
+    title: '5opka Game',
+    name: 'pyaterka',
+    engine: ENGINES.UNITY,
+    developers: [DEVS.Enjine, DEVS.NVW],
+    screenshotsCount: 1,
+    releaseDate: '',
+    status: STATUS.DEV,
+    version: '',
+    downloadLink: []
+  },
+  {
+    title: 'Simulator of a information network specialist',
+    name: 'vrsimulator',
+    engine: ENGINES.UNITY,
+    developers: [DEVS.Enjine],
+    screenshotsCount: 11,
+    releaseDate: '17.06.2023',
+    status: STATUS.RELEASE,
+    version: '1.0',
+    downloadLink: [{
+      link: 'https://github.com/Son1kXDev/enjine/releases/download/game/Simulator.Installer.exe',
+      platform: 'Windows'
+    }]
+  }
+];
 
-  export default games;
+export default games;

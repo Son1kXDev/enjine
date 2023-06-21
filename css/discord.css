@@ -24,23 +24,21 @@
   display: block;
 }
 
-.discord-widget.active + .discord-close {
+.discord-widget.active+.discord-close {
   display: block;
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 600px) {
 
   .discord-widget {
-    position: static;
-    margin-top: 20px;
-    bottom: 50px;
-    right: 0px;
+    width: 100%;
+    right: 1px;
   }
 
   .discord-close-btn {
     position: static;
-    margin-left:auto;
+    margin-left: auto;
   }
 
   .discord-widget iframe {
@@ -48,5 +46,3 @@
   }
 
 }
-
-  

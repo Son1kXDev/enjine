@@ -11,7 +11,7 @@ var url = window.location.href;
 const language = url.includes('ru') ? 'ru' : 'en';
 const RU = language == "ru";
 
-export function generateGamePageById(id){
+export function generateGamePageById(id) {
     const game = games[id];
 
     const gameFolder = "../games/" + game.name + "/";
@@ -20,10 +20,10 @@ export function generateGamePageById(id){
     titleElement.classList.add('game-title');
     titleElement.innerHTML = game.engine + " " + game.title;
 
-    
+
     var versionElement = document.createElement('h1');
     versionElement.classList.add('game-subtitle');
-    if(game.version != '') {
+    if (game.version != '') {
         versionElement.innerHTML = RU ? "Версия: " : "Version: ";
         versionElement.innerHTML += game.version;
     }
@@ -32,15 +32,17 @@ export function generateGamePageById(id){
     releaseDateElement.classList.add('game-release-date');
     releaseDateElement.innerHTML = '<i class="fa-solid fa-calendar-days"></i> ';
 
-    var releaseDateParts = game.releaseDate.split('.');
-    var day = parseInt(releaseDateParts[0], 10);
-    var month = parseInt(releaseDateParts[1], 10) - 1;
-    var year = parseInt(releaseDateParts[2], 10);
-    var releaseDate = new Date(year, month, day);
-    if (releaseDate <= new Date()) releaseDateElement.innerHTML += RU ? 'Дата выхода: ' : 'Release date: ';
-    else releaseDateElement.innerHTML += RU ? 'Планируемая дата выхода: ' : 'Planned release date: ';
-    releaseDateElement.innerHTML += game.releaseDate;
-    
+    if (game.releaseDate != '') {
+        var releaseDateParts = game.releaseDate.split('.');
+        var day = parseInt(releaseDateParts[0], 10);
+        var month = parseInt(releaseDateParts[1], 10) - 1;
+        var year = parseInt(releaseDateParts[2], 10);
+        var releaseDate = new Date(year, month, day);
+        if (releaseDate <= new Date()) releaseDateElement.innerHTML += RU ? 'Дата выхода: ' : 'Release date: ';
+        else releaseDateElement.innerHTML += RU ? 'Планируемая дата выхода: ' : 'Planned release date: ';
+        releaseDateElement.innerHTML += game.releaseDate;
+    }
+
     var developersElement = document.createElement('h1');
     developersElement.classList.add('game-developers');
     developersElement.innerHTML = RU ? "Разработчик: " : "Developers: ";
@@ -52,14 +54,14 @@ export function generateGamePageById(id){
         dev.appendChild(logo);
         dev.innerHTML += " " + game.developers[i].name;
         developersElement.appendChild(dev);
-        if(i+1 < game.developers.length) developersElement.innerHTML += ", ";
+        if (i + 1 < game.developers.length) developersElement.innerHTML += ", ";
     }
 
     var banner = document.createElement('img');
     banner.src = gameFolder + "images/" + "banner.jpg";
     screenshotsElement.appendChild(banner);
 
-    for(let i = 1; i <= game.screenshotsCount; i++) {
+    for (let i = 1; i <= game.screenshotsCount; i++) {
         var screenshotPath = gameFolder + "images/screenshot_" + (RU ? "ru_" : "en_") + i + ".jpg";
         var screenshot = document.createElement('img');
         screenshot.src = screenshotPath;
@@ -72,13 +74,13 @@ export function generateGamePageById(id){
     var descriptionFilePath = gameFolder + "description/" + (RU ? "ru.txt" : "en.txt");
     var xhr = new XMLHttpRequest();
     xhr.open('GET', descriptionFilePath, true);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             description.innerHTML = this.responseText;
         }
     }
     xhr.send();
-    
+
     var systemRequirementsLabel = document.createElement('h2');
     systemRequirementsLabel.innerHTML = RU ? "Системные требования" : "System requirements"
     systemRequirementsElement.appendChild(systemRequirementsLabel);
@@ -88,13 +90,13 @@ export function generateGamePageById(id){
     var systemRequirements = JSON.parse(request.responseText);
     var systemRequirementsTable = document.createElement('table');
     var systemRequirementsTableBody = document.createElement('tbody');
-    var systemRequirementsTableLabels = RU ? 
-    ["Операционная система:", "Процессор:", "Видеокарта:", "ОЗУ:", "Свободное место на диске:", "Дополнительно:"] :
-    ["OS:", "Processor:", "Graphics card", "RAM", "Free disk space:", "Other:"];
+    var systemRequirementsTableLabels = RU ?
+        ["Операционная система:", "Процессор:", "Видеокарта:", "ОЗУ:", "Свободное место на диске:", "Дополнительно:"] :
+        ["OS:", "Processor:", "Graphics card", "RAM", "Free disk space:", "Other:"];
     let ind = 0;
     systemRequirements.forEach(rowData => {
         var row = document.createElement('tr');
-        
+
         var label = document.createElement('td');
         label.textContent = systemRequirementsTableLabels[ind];
         row.appendChild(label);
@@ -114,7 +116,7 @@ export function generateGamePageById(id){
     var changelogFilePath = gameFolder + "/changelog/" + (RU ? "ru.txt" : "en.txt");
     var xhr = new XMLHttpRequest();
     xhr.open('GET', changelogFilePath, true);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             var changelogLabel = document.createElement('h2');
             changelogLabel.innerText = RU ? "Информация об обновлении" : "Changelog";
@@ -122,7 +124,7 @@ export function generateGamePageById(id){
             var changelogList = document.createElement('ul');
             changelogElement.appendChild(changelogList);
             var changelog = this.responseText.split('\n');
-            changelog.forEach(info=> {
+            changelog.forEach(info => {
                 var listItem = document.createElement('li');
                 listItem.textContent = info;
                 changelogList.appendChild(listItem);
@@ -144,7 +146,7 @@ export function generateGamePageById(id){
 
     headerElement.appendChild(titleElement);
     headerElement.appendChild(versionElement);
-    headerElement.appendChild(releaseDateElement);
+    if (game.releaseDate != '') headerElement.appendChild(releaseDateElement);
     headerElement.appendChild(developersElement);
     descriptionElement.appendChild(description);
 };

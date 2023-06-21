@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, orientation=portrait">
@@ -10,31 +11,39 @@
   <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/social.css">
   <link rel="stylesheet" href="../css/gameInfo.css">
+  <link rel="stylesheet" href="../css/discord.css">
   <link rel="stylesheet" href="../css/loader.css">
   <script type="module" src="../js/language.js"></script>
   <script src="https://kit.fontawesome.com/1d8eb1b313.js" crossorigin="anonymous"></script>
   <script type="module" src="../js/gamePage.js"></script>
   <script src="../js/bannerAnimation.js"></script>
-  <link rel="icon" href="../images/EnjineLogo.svg">
+  <link rel="icon" href="../images/developers/EnjineLogo.svg">
 </head>
+
 <body>
-  
-  <div id="loader-container"></div> 
+
+  <div id="loader-container"></div>
   <script src="../js/loader.js"></script>
 
   <div id="navigation"></div>
   <script src="../js/navigation.js"></script>
 
-	<main>
-		<section class="game-header" id="header"></section>
-		<section class="game-banner" id="game-screenshots"></section>
-		<section class="game-info">
-			<div class="game-description" id="game-description"></div>
-			<div class="game-system-req" id="game-system-req"></div>
-			<div class="game-update-info" id="game-update-info"></div>
-			<div class="game-buy" id="game-download"><a name="download"></a></div>
-		</section>
-	</main>
-	<script type="module">generateGamePageById(1);</script>
+  <main>
+    <section class="game-header" id="header"></section>
+    <section class="game-banner" id="game-screenshots"></section>
+    <section class="game-info">
+      <div class="game-description" id="game-description"></div>
+      <div class="game-system-req" id="game-system-req"></div>
+      <div class="game-update-info" id="game-update-info"></div>
+      <div class="game-buy" id="game-download"><a name="download"></a></div>
+    </section>
+
+    <div id="follow-us"></div>
+    <script src="../js/footer.js"></script>
+
+  </main>
+
+  <script type="module">generateGamePageById(1);</script>
 </body>
+
 </html>

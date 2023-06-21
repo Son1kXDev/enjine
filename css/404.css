@@ -1,50 +1,65 @@
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-top: 50px;
-    text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans-serif);
+  background: #40092b;
+  overflow: hidden;
+  background: linear-gradient(5deg, #84092b, #40092b);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  color: var(--text-color);
+}
+
+main {
+  display: block !important;
+}
+
+footer {
+  background-color: #0000 !important;
+}
+
+#social-links li {
+  opacity: 1;
+  transform: translateX(0px);
+  animation: none;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
 
-  body {
-    margin: 0;
-    font-family: var(--font-sans-serif);
-    background: #40092b;
-    overflow: hidden;
-    background: linear-gradient(5deg, #84092b, #40092b);
-    background-size: 400% 400%;
-    animation: gradient 5s ease infinite;
-    color: var(--text-color);
-  }
-    
-  @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 00% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
   }
 
-  h1 {
-    font-size: 48px;
-    margin-bottom: 0px;
+  100% {
+    background-position: 00% 50%;
   }
+}
 
-  h2 {
-    font-size: 45px;
-    margin-bottom: 20px;
-  }
+h1 {
+  font-size: 48px;
+  margin-bottom: 0px;
+}
 
-  p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
+h2 {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
 
-  a{
-    color: white;
-    font-style: bold;
-  }
+p {
+  font-size: 18px;
+}
+
+a {
+  color: white;
+  font-style: bold;
+}
