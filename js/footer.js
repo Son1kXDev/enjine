@@ -2,9 +2,7 @@ fetch('../footer.html')
   .then(response => response.text())
   .then(html => {
     document.getElementById('follow-us').innerHTML = html;
-    var copyright = '<i class="fa-regular fa-copyright"></i> 2023 <img src="../images/developers/EnjineTextLogo.svg" alt="Enjine">. ';
-    var copyrightEnd = window.location.href.includes('ru') ? 'Все права защищены.' : 'All rights reserved.';
-    copyright += copyrightEnd;
+    var copyright = '© <img src="../images/developers/EnjineTextLogo.svg" alt="Enjine"> 2023';
     document.getElementById('copyright').innerHTML = copyright;
   })
   .then(() => {

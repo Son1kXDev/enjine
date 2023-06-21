@@ -94,8 +94,7 @@
   cursor: default;
   user-select: none;
   pointer-events: none;
-  height: 0.85em;
-  vertical-align: top;
+  height: 0.75em;
 }
 
 #follow-us {
