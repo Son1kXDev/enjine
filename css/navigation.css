@@ -75,7 +75,7 @@ nav .dropdown-menu {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 5000;
-  background-color: var(--primary-color);
+  background-color: var(--footer-color);
   border-radius: 4px;
   left: 50%;
   transform: translateX(-50%);
@@ -85,7 +85,7 @@ nav .dropdown-menu {
 nav .dropdown-menu li {
   position: relative;
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--footer-color);
   margin: 0;
 }
 
@@ -102,13 +102,13 @@ nav .dropdown-menu li a:hover {
 }
 
 nav .active-page {
-  text-decoration: underline white;
+  text-decoration: underline var(--text-color);
   font-weight: 110%;
   cursor: default;
 }
 
 nav .active-page:hover {
-  color: white;
+  color: var(--text-color);
 }
 
 nav .dropdown-menu li a.active-page {

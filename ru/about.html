@@ -8,6 +8,7 @@
   <link rel="preload" href="../loader.html" as="fetch">
   <link rel="preload" href="../js/loader.js" as="script">
   <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/about.css">
   <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/social.css">
   <link rel="stylesheet" href="../css/form.css">
@@ -27,7 +28,7 @@
   <script src="../js/navigation.js"></script>
 
   <main>
-    <div id="main-about">
+    <div class="container">
       <h1>Информация об Enjine</h1>
       <p class="company-description">Добро пожаловать в мир Enjine - независимого разработчика игр!</p>
       <p class="company-description">Мы специализируемся на создании игр с использованием Unity3D.</p>
@@ -41,9 +42,9 @@
           машин
           и инструментами тюнинга и покраски.</li>
       </ul>
-      <p class="company-description">Мы стремимся создавать игры, которые нам самих будет интересно играть.</p>
+      <p class="company-description">Мы стремимся создавать игры, в которые нам самим будет интересно играть.</p>
       <p class="company-description">Мы открыты для сотрудничества и готовы делиться своими знаниями и опытом, чтобы
-        помочь создать лучшие игры и сделать игровую индустрию еще более захватывающей.</p>
+        создавать лучшие игры и сделать игровую индустрию еще более захватывающей.</p>
       <h2 class="contact-heading">Свяжитесь с нами</h2>
       <form action="https://formspree.io/f/xqkoynrz" method="POST" class="contact-form">
         <label>
@@ -61,7 +62,7 @@
         <button type="submit" class="submit-button">Отправить</button>
       </form>
 
-      <!-- без этой хуйни iframe ломается загрузка после лоадера, так что он тут нужен -->
+      <!-- без iframe ломается загрузка после лоадера, так что он тут нужен -->
       <iframe style="display: none" src="https://discord.com/widget?id=483959267897114624&theme=dark" width="0"
         height="0"></iframe>
 

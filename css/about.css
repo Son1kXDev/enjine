@@ -1,0 +1,46 @@
+@import url("root.css");
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+    list-style-position: inside;
+}
+
+.container a {
+    color: var(--text-color);
+}
+
+.company-description {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.contact-heading {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Media */
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .container h2 {
+        font-size: 1.8rem;
+    }
+
+    .container p {
+        font-size: 1.382em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
