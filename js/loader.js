@@ -9,4 +9,12 @@ fetch('../loader.html')
         document.querySelector('main').style.display = 'block';
       }, 250);
     });
+    setTimeout(function () {
+      var loader = document.getElementById('loader');
+      if (!loader.classList.contains('hidden')) {
+        console.error('Page loading is failed. Forced hiding loader object.');
+        loader.classList.add('hidden');
+        document.querySelector('main').style.display = 'block';
+      }
+    }, 1500);
   });

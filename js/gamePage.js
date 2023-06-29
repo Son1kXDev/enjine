@@ -113,7 +113,7 @@ export function generateGamePageById(id) {
     systemRequirementsTable.appendChild(systemRequirementsTableBody);
     systemRequirementsElement.appendChild(systemRequirementsTable);
 
-    var changelogFilePath = gameFolder + "/changelog/" + (RU ? "ru.txt" : "en.txt");
+    var changelogFilePath = gameFolder + "changelog/" + (RU ? "ru.txt" : "en.txt");
     var xhr = new XMLHttpRequest();
     xhr.open('GET', changelogFilePath, true);
     xhr.onreadystatechange = function () {
@@ -129,8 +129,6 @@ export function generateGamePageById(id) {
                 listItem.textContent = info;
                 changelogList.appendChild(listItem);
             })
-        } else {
-            console.log('changelog file not found');
         }
     }
     xhr.send();
