@@ -36,7 +36,7 @@ const games = [
     engine: ENGINES.UNITY,
     developers: [DEVS.Enjine, DEVS.DRAGOLITE],
     screenshotsCount: 6,
-    releaseDate: '2023',
+    releaseDate: '2024',
     status: STATUS.BETA,
     version: '0.1.4 beta',
     downloadLink: [
@@ -51,12 +51,12 @@ const games = [
     ]
   },
   {
-    title: '5opka Game',
-    name: 'pyaterka',
+    title: 'The Five',
+    name: 'thefive',
     engine: ENGINES.UNITY,
     developers: [DEVS.Enjine, DEVS.NVW],
     screenshotsCount: 1,
-    releaseDate: '',
+    releaseDate: 'XX.11.2023',
     status: STATUS.DEV,
     version: '',
     downloadLink: []

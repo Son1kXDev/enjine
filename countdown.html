@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, orientation=portrait">
+    <title>Enjine - Indie Game Developer</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/social.css">
+    <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/countdown.css">
+    <script src="../js/language.js"></script>
+    <script src="https://kit.fontawesome.com/1d8eb1b313.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/yandex.js"></script>
+    <link rel="icon" href="../images/developers/EnjineLogo.svg">
+</head>
+
+<body>
+
+    <div id="loader-container"></div>
+    <script src="../js/loader.js"></script>
+
+    <div id="navigation"></div>
+    <script src="../js/navigation.js"></script>
+
+    <main>
+        <div id="timer">
+            <span class="digit" id="days"></span>
+            <span class="separator">:</span>
+            <span class="digit" id="hours"></span>
+            <span class="separator">:</span>
+            <span class="digit" id="minutes"></span>
+            <span class="separator">:</span>
+            <span class="digit" id="seconds"></span>
+        </div>
+        <script>
+            // Set the end date for the countdown (YYYY-MM-DD format)
+            var endDate = new Date("2023-11-30T12:00:00").getTime();
+
+            // Initialize variables to store the previous values of days, hours, minutes, and seconds
+            var prevDays = -1;
+            var prevHours = -1;
+            var prevMinutes = -1;
+            var prevSeconds = -1;
+
+            // Update the countdown every second
+            var x = setInterval(function () {
+                var now = new Date().getTime();
+                var distance = endDate - now;
+
+                // Calculate days, hours, minutes, and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the countdown only if the values have changed
+                if (days !== prevDays) {
+                    document.getElementById("days").classList.add("digit-out");
+
+                    setTimeout(function () {
+                        document.getElementById("days").innerHTML = days >= 10 ? days : "0" + days;
+
+                        document.getElementById("days").classList.remove("digit-out");
+                        document.getElementById("days").classList.add("digit-in");
+                    }, 250);
+                    document.getElementById("days").classList.remove("digit-in");
+                    prevDays = days;
+                }
+                if (hours !== prevHours) {
+                    document.getElementById("hours").classList.add("digit-out");
+                    setTimeout(function () {
+                        document.getElementById("hours").innerHTML = hours >= 10 ? hours : "0" + hours;
+                        document.getElementById("hours").classList.remove("digit-out");
+                        document.getElementById("hours").classList.add("digit-in");
+                    }, 250);
+                    document.getElementById("hours").classList.remove("digit-in");
+                    prevHours = hours;
+                }
+                if (minutes !== prevMinutes) {
+                    document.getElementById("minutes").classList.add("digit-out");
+                    setTimeout(function () {
+                        document.getElementById("minutes").innerHTML = minutes >= 10 ? minutes : "0" + minutes;
+                        document.getElementById("minutes").classList.remove("digit-out");
+                        document.getElementById("minutes").classList.add("digit-in");
+                    }, 250);
+                    document.getElementById("minutes").classList.remove("digit-in");
+                    prevMinutes = minutes;
+                }
+                if (seconds !== prevSeconds) {
+                    document.getElementById("seconds").classList.add("digit-out");
+                    setTimeout(function () {
+                        document.getElementById("seconds").innerHTML = seconds >= 10 ? seconds : "0" + seconds;
+                        document.getElementById("seconds").classList.remove("digit-out");
+                        document.getElementById("seconds").classList.add("digit-in");
+                    }, 250);
+                    document.getElementById("seconds").classList.remove("digit-in");
+                    prevSeconds = seconds;
+                }
+
+                // Если таймер истек, отобразить сообщение
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("timer").innerHTML = "Today...";
+                }
+            }, 1000);
+
+        </script>
+
+    </main>
+
+    <div id="follow-us"></div>
+    <script src="../js/footer.js"></script>
+</body>
+
+</html>

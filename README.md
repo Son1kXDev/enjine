@@ -11,7 +11,7 @@
 - `404.html`: Страница ошибки, отображаемая при запросе несуществующей страницы.
 - `navigation.html`: Компонент навигации, используемый на всех страницах.
 - `offroaded.html`: Страница игры «Offroaded».
-- `pyaterka.html`: Страница игры «5opka Game».
+- `thefive.html`: Страница игры «5opka Game».
 - `vrsimulator.html`: Страница игры «VR Simulator».
 
 ## Сайт
@@ -72,10 +72,10 @@
   - `images/` - здесь храняться все изображения, генерируемые на странице `offroaded.html`
   - `systemRequirements.json`
 
-- `games/pyaterka`
+- `games/thefive`
   - `description/en.txt`
   - `description/ru.txt`
-  - `images/` - здесь храняться все изображения, генерируемые на странице `pyaterka.html`
+  - `images/` - здесь храняться все изображения, генерируемые на странице `thefive.html`
   - `systemRequirements.json`
 
 - `games/vrsimulator`
