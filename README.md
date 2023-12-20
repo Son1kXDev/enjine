@@ -11,7 +11,7 @@
 - `404.html`: Страница ошибки, отображаемая при запросе несуществующей страницы.
 - `navigation.html`: Компонент навигации, используемый на всех страницах.
 - `offroaded.html`: Страница игры «Offroaded».
-- `thefive.html`: Страница игры «5opka Game».
+- `thefive.html`: Страница игры «The Five.
 - `vrsimulator.html`: Страница игры «VR Simulator».
 
 ## Сайт
