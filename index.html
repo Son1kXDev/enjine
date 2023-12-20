@@ -4,10 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enjine - Indie Game Developer</title>
-  <script type="module" src="../js/outoforderevent.js"></script>
-  <script src="js/autoLanguageIndex.js"></script>
+  <title>Enjine</title>
   <link rel="icon" href="images/developers/EnjineLogo.svg">
+  <link rel="stylesheet" href="css/global.css">
 </head>
+
+<body>
+  <img src="images/EnjineFullLogo.png" alt="Enjine">
+
+  <audio id="audio" src="audio/music.mp3" autoplay loop></audio>
+  <script>
+    document.addEventListener("click", function () {
+      var audio = document.getElementById("audio");
+      audio.volume = 0.3;
+      audio.play();
+    });
+  </script>
+
+</body>
 
 </html>

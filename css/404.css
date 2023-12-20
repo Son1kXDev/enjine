@@ -21,16 +21,6 @@ main {
   display: block !important;
 }
 
-footer {
-  background-color: #0000 !important;
-}
-
-#social-links li {
-  opacity: 1;
-  transform: translateX(0px);
-  animation: none;
-}
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;

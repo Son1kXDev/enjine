@@ -1,5 +1,0 @@
-Added pause menu.
-Added new options in the settings menu.
-New appearance of the pop-up windows interface.
-Fixed a bug with FPS drawdown.
-Fixed a visual bug of the gearshift lever.

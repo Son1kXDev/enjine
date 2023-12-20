@@ -1,132 +1,44 @@
 @import url("root.css");
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-size: 16px;
-  font-family: var(--font-sans-serif);
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  background-size: 400% 400%;
-  animation: gradient 5s ease infinite;
-  color: var(--text-color);
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-h1,
-h2,
-h3 {
-  color: var(--text-color);
-  text-align: center;
-  margin-top: 0px;
-  padding-bottom: 15px;
-}
-
-h1 {
-  font-size: 2.618em;
-}
-
-h2 {
-  font-size: 1.618em;
-}
-
-h3 {
-  font-size: 1em;
-}
-
-main {
-  margin: 0;
-  min-width: 100%;
-  margin-bottom: 4rem;
-  min-height: calc(100% - 9.7rem);
-  position: relative;
-}
-
-.container {
-  z-index: 1;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.icon {
-  vertical-align: top;
-  margin-top: 1px;
-  margin-right: -3px;
-  height: 1em;
-}
-
-#vhs {
-  z-index: -1;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-
-img[outoforder] {
+img {
   display: block;
-  margin-top: 5%;
-  padding-top: 10%;
+  margin-top: 2%;
+  padding-top: 0%;
   margin-left: auto;
   margin-right: auto;
   max-width: 400px;
 }
 
+body {
+  margin: 0;
+  font-family: var(--font-sans-serif);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+
 /* Media */
 
 @media screen and (max-width: 900px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  header nav {
-    margin-bottom: 1rem;
-  }
-
-  main {
-    padding: 1rem;
-    text-align: center;
-    min-height: calc(100% - 7.5rem);
+  img {
+    width: 400px;
   }
 }
 
 @media screen and (max-width: 580px) {
-  header h1 {
-    font-size: 1.2rem;
+  img {
+    width: 300px;
   }
+}
 
-  main {
-    padding: 1rem;
-    text-align: center;
+@media screen and (max-width: 330px) {
+  img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  img {
+    width: 125px;
   }
 }

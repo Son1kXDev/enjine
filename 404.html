@@ -3,20 +3,8 @@
 
 <head>
   <title>Error 404 - Page Not Found</title>
-  <script>
-    function redirectToLocalized404() {
-      var userLang = navigator.language || navigator.userLanguage;
-      var url = '404';
-      url = (userLang.indexOf('ru') === 0 ? '/ru/' : '/en/') + url.split('/').pop();
-      window.location.replace(url);
-    }
-  </script>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/404.css">
 </head>
-
-<body>
-  <!-- <script> redirectToLocalized404(); </script> -->
-  <script type="module" src="../js/outoforderevent.js"></script>
-
-</body>
 
 </html>
