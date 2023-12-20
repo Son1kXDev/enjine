@@ -15,6 +15,8 @@ fetch(navigationFileURL)
         link.classList.add('active-page');
         link.href = '#';
       }
+      // out of order event:
+      link.href = '#';
     });
   });
 
